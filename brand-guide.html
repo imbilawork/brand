@@ -150,6 +150,123 @@ nav {
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes markIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
 
+/* ─── AGENT URL BANNER ─── */
+.agent-banner {
+  background: var(--black-rich);
+  border: 2px solid var(--honey);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  margin: -50px auto 0;
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+}
+.agent-banner-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--honey);
+  margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+}
+.agent-banner-label::before {
+  content: ''; display: inline-block; width: 8px; height: 8px;
+  background: var(--honey); border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.agent-banner p { color: var(--grey-300); font-size: 14px; margin-bottom: 16px; max-width: none; }
+.agent-url-row {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--black); border: 1px solid var(--grey-800);
+  border-radius: var(--radius-md); padding: 4px 4px 4px 16px;
+}
+.agent-url-row code {
+  flex: 1; font-family: var(--font); font-size: 13px; font-weight: 500;
+  color: var(--honey); background: none; border: none; padding: 0;
+  white-space: nowrap; overflow-x: auto;
+  -webkit-user-select: all; user-select: all;
+}
+.agent-url-row .copy-url-btn {
+  flex-shrink: 0; padding: 10px 20px; border-radius: var(--radius-sm);
+  background: var(--honey); color: var(--black); border: none;
+  font-family: var(--font); font-size: 13px; font-weight: 700;
+  cursor: pointer; transition: all 0.2s; letter-spacing: 0.01em;
+}
+.agent-url-row .copy-url-btn:hover { background: var(--honey-light); }
+.agent-url-row .copy-url-btn.copied { background: var(--success); color: var(--white); }
+.agent-banner-links {
+  display: flex; gap: 16px; margin-top: 16px; flex-wrap: wrap;
+}
+.agent-banner-links a {
+  font-size: 12px; font-weight: 500; color: var(--grey-400);
+  padding: 5px 14px; border: 1px solid var(--grey-800);
+  border-radius: var(--radius-pill); transition: all 0.2s;
+}
+.agent-banner-links a:hover { color: var(--honey); border-color: var(--honey-15); background: var(--honey-10); }
+@media (max-width: 768px) {
+  .agent-banner { margin: -30px 20px 0; padding: 24px 20px; }
+  .agent-url-row code { font-size: 11px; }
+}
+
+/* ─── JSON VIEWER ─── */
+.json-viewer-wrap {
+  background: var(--black);
+  border: 1px solid var(--grey-800);
+  border-radius: var(--radius-lg);
+  margin-top: 32px; overflow: hidden;
+}
+.json-viewer-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px; border-bottom: 1px solid var(--grey-800);
+  background: var(--grey-900);
+}
+.json-viewer-header span {
+  font-size: 12px; font-weight: 600; color: var(--grey-400);
+  display: flex; align-items: center; gap: 8px;
+}
+.json-viewer-header span::before {
+  content: '{ }'; font-size: 11px; color: var(--honey); font-weight: 700;
+}
+.json-viewer-header .json-viewer-actions { display: flex; gap: 8px; }
+.json-viewer-header button {
+  padding: 5px 14px; border-radius: var(--radius-sm);
+  font-family: var(--font); font-size: 11px; font-weight: 600;
+  cursor: pointer; transition: all 0.2s; border: 1px solid var(--grey-700);
+  background: transparent; color: var(--grey-300);
+}
+.json-viewer-header button:hover { border-color: var(--honey); color: var(--honey); }
+.json-viewer-header button.active { background: var(--honey-10); border-color: var(--honey); color: var(--honey); }
+.json-viewer-body {
+  padding: 20px 24px; max-height: 600px; overflow-y: auto;
+  scrollbar-width: thin; scrollbar-color: var(--grey-700) transparent;
+}
+.json-viewer-body::-webkit-scrollbar { width: 6px; }
+.json-viewer-body::-webkit-scrollbar-track { background: transparent; }
+.json-viewer-body::-webkit-scrollbar-thumb { background: var(--grey-700); border-radius: 3px; }
+.json-viewer-body pre {
+  font-family: var(--font); font-size: 12px; font-weight: 500;
+  line-height: 1.7; color: var(--grey-300); white-space: pre; tab-size: 2;
+  margin: 0;
+}
+.json-viewer-body .jk { color: var(--honey); font-weight: 600; }
+.json-viewer-body .js { color: var(--grey-300); }
+.json-viewer-body .jn { color: var(--info); }
+.json-viewer-body .jb { color: var(--success); }
+.json-viewer-body .jp { color: var(--grey-500); }
+.json-viewer-body .jl { color: var(--grey-700); }
+.json-viewer-search {
+  padding: 10px 20px; border-bottom: 1px solid var(--grey-800);
+  display: none;
+}
+.json-viewer-search.visible { display: block; }
+.json-viewer-search input {
+  width: 100%; padding: 8px 14px; border-radius: var(--radius-sm);
+  background: var(--black); border: 1px solid var(--grey-700);
+  font-family: var(--font); font-size: 13px; color: var(--white);
+  outline: none; transition: border-color 0.2s;
+}
+.json-viewer-search input:focus { border-color: var(--honey); }
+.json-viewer-search input::placeholder { color: var(--grey-600); }
+
 /* ─── SECTION HEADER ─── */
 .section-label {
   font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
@@ -454,6 +571,7 @@ footer p { margin: 0 auto; }
     <a href="#arch">Architecture</a>
     <a href="#rules">Rules</a>
     <a href="#agent">Agent Guide</a>
+    <a href="#json-viewer" style="color:var(--honey);">Tokens JSON</a>
   </div>
   <span class="nav-tag">v3.0 · Mar 2026</span>
 </nav>
@@ -477,6 +595,22 @@ footer p { margin: 0 auto; }
 
 
 <div class="page">
+
+<!-- ═══════ AGENT URL BANNER ═══════ -->
+<div class="agent-banner">
+  <div class="agent-banner-label">Agent-Ready Brand Tokens</div>
+  <p>Point any AI agent at this URL to get the full Imbila.AI brand system — colors, fonts, spacing, voice, logos — as structured JSON. No browser needed.</p>
+  <div class="agent-url-row">
+    <code id="agent-url">https://raw.githubusercontent.com/imbilawork/brand/main/brand-tokens.json</code>
+    <button class="copy-url-btn" onclick="copyAgentUrl(this)">Copy URL</button>
+  </div>
+  <div class="agent-banner-links">
+    <a href="#json-viewer">View tokens</a>
+    <a href="https://raw.githubusercontent.com/imbilawork/brand/main/brand-tokens.css" target="_blank" rel="noopener">CSS vars ↗</a>
+    <a href="https://raw.githubusercontent.com/imbilawork/brand/main/BRAND.md" target="_blank" rel="noopener">Markdown guide ↗</a>
+    <a href="https://github.com/imbilawork/brand" target="_blank" rel="noopener">GitHub repo ↗</a>
+  </div>
+</div>
 
 <!-- ═══════ 01 · BRAND ORIGIN ═══════ -->
 <section id="origin">
@@ -1065,9 +1199,34 @@ footer p { margin: 0 auto; }
 </section>
 
 
-<!-- ═══════ 11 · QUICK REFERENCE ═══════ -->
+<!-- ═══════ 11 · TOKEN VIEWER ═══════ -->
+<section id="json-viewer">
+  <div class="section-label">11 · Token Viewer</div>
+  <h2>Live brand tokens. <span class="accent">Inspect and copy.</span></h2>
+  <p style="margin-bottom:8px;">This is the exact JSON that agents fetch from the raw URL. Search, browse, or copy the whole thing.</p>
+
+  <div class="json-viewer-wrap">
+    <div class="json-viewer-header">
+      <span>brand-tokens.json</span>
+      <div class="json-viewer-actions">
+        <button onclick="toggleJsonSearch()">Search</button>
+        <button onclick="toggleJsonCollapse(this)" id="collapse-btn">Collapse</button>
+        <button onclick="copyFullJson(this)">Copy all</button>
+      </div>
+    </div>
+    <div class="json-viewer-search" id="json-search">
+      <input type="text" placeholder="Search tokens... (e.g. honey, font, enterprise)" oninput="filterJson(this.value)">
+    </div>
+    <div class="json-viewer-body" id="json-body">
+      <pre id="json-content">Loading tokens...</pre>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════ 12 · QUICK REFERENCE ═══════ -->
 <section>
-  <div class="section-label">11 · Quick Reference</div>
+  <div class="section-label">12 · Quick Reference</div>
   <h2>The cheat sheet. <span class="accent">Pin this.</span></h2>
 
   <div class="grid-3" style="margin-top:24px;">
@@ -1137,6 +1296,119 @@ function copyTokens() {
   const btn = document.querySelector('.copy-btn');
   btn.textContent = 'Copied!';
   setTimeout(() => btn.textContent = 'Copy tokens', 1500);
+}
+
+// Copy agent URL
+function copyAgentUrl(btn) {
+  const url = document.getElementById('agent-url').textContent;
+  navigator.clipboard.writeText(url).catch(() => {});
+  btn.textContent = 'Copied!';
+  btn.classList.add('copied');
+  setTimeout(() => { btn.textContent = 'Copy URL'; btn.classList.remove('copied'); }, 2000);
+}
+
+// JSON Viewer
+let jsonData = null;
+let jsonRaw = '';
+let jsonCollapsed = false;
+
+function syntaxHighlight(json) {
+  return json
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?)/g, function(match) {
+      if (/:$/.test(match)) {
+        return '<span class="jk">' + match.replace(/:$/, '') + '</span><span class="jp">:</span>';
+      }
+      return '<span class="js">' + match + '</span>';
+    })
+    .replace(/\b(true|false)\b/g, '<span class="jb">$&</span>')
+    .replace(/\b(null)\b/g, '<span class="jn">null</span>')
+    .replace(/\b(-?\d+\.?\d*([eE][+-]?\d+)?)\b/g, '<span class="jn">$&</span>');
+}
+
+function renderJson(data, indent) {
+  const str = JSON.stringify(data, null, indent || 2);
+  jsonRaw = str;
+  document.getElementById('json-content').innerHTML = syntaxHighlight(str);
+}
+
+function addLineNumbers(html) {
+  const lines = html.split('\n');
+  return lines.map((line, i) => {
+    const num = '<span class="jl">' + String(i + 1).padStart(4) + '  </span>';
+    return num + line;
+  }).join('\n');
+}
+
+function renderJsonWithLines(data, indent) {
+  const str = JSON.stringify(data, null, indent || 2);
+  jsonRaw = str;
+  const highlighted = syntaxHighlight(str);
+  document.getElementById('json-content').innerHTML = addLineNumbers(highlighted);
+}
+
+// Fetch and render
+(function loadTokens() {
+  const url = 'https://raw.githubusercontent.com/imbilawork/brand/main/brand-tokens.json';
+  fetch(url)
+    .then(r => r.json())
+    .then(data => {
+      jsonData = data;
+      renderJsonWithLines(data);
+    })
+    .catch(() => {
+      document.getElementById('json-content').textContent = 'Could not load tokens. Visit: ' + url;
+    });
+})();
+
+function toggleJsonSearch() {
+  const el = document.getElementById('json-search');
+  el.classList.toggle('visible');
+  if (el.classList.contains('visible')) el.querySelector('input').focus();
+}
+
+function filterJson(query) {
+  if (!jsonData) return;
+  if (!query.trim()) { renderJsonWithLines(jsonData); return; }
+  const str = JSON.stringify(jsonData, null, 2);
+  const lines = str.split('\n');
+  const q = query.toLowerCase();
+  const matched = lines.filter(l => l.toLowerCase().includes(q));
+  if (matched.length === 0) {
+    document.getElementById('json-content').innerHTML = '<span class="jp">No matches for "' + query + '"</span>';
+    return;
+  }
+  const highlighted = syntaxHighlight(matched.join('\n'));
+  document.getElementById('json-content').innerHTML = highlighted;
+}
+
+function toggleJsonCollapse(btn) {
+  if (!jsonData) return;
+  jsonCollapsed = !jsonCollapsed;
+  if (jsonCollapsed) {
+    const topLevel = {};
+    for (const [key, val] of Object.entries(jsonData)) {
+      if (typeof val === 'object' && val !== null) {
+        topLevel[key] = Array.isArray(val) ? '[…]' : '{…}';
+      } else {
+        topLevel[key] = val;
+      }
+    }
+    renderJsonWithLines(topLevel);
+    btn.textContent = 'Expand';
+    btn.classList.add('active');
+  } else {
+    renderJsonWithLines(jsonData);
+    btn.textContent = 'Collapse';
+    btn.classList.remove('active');
+  }
+}
+
+function copyFullJson(btn) {
+  navigator.clipboard.writeText(jsonRaw).catch(() => {});
+  btn.textContent = 'Copied!';
+  btn.classList.add('active');
+  setTimeout(() => { btn.textContent = 'Copy all'; btn.classList.remove('active'); }, 2000);
 }
 </script>
 
