@@ -1,0 +1,107 @@
+/* ═══════════════════════════════════════════════════════════════
+   IMBILA.AI BRAND TOKENS v3.0
+   Import this file into any project for canonical brand styles.
+   Source: https://brand.imbila.ai
+   Repo:   https://github.com/imbilawork/agentbrand
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Google Fonts Import ─── */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&display=swap');
+
+/* ─── Core Tokens (theme-independent) ─── */
+:root {
+  /* Font */
+  --font: 'DM Sans', system-ui, -apple-system, sans-serif;
+
+  /* Honey palette */
+  --honey:       #EDAF42;
+  --honey-light: #F5C96E;
+  --honey-dark:  #C8922F;
+  --honey-deep:  #A67720;
+  --honey-wash:  #FAE0A5;
+  --honey-08:    rgba(237,175,66,0.08);
+  --honey-10:    rgba(237,175,66,0.10);
+  --honey-15:    rgba(237,175,66,0.15);
+  --honey-25:    rgba(237,175,66,0.25);
+
+  /* Neutrals */
+  --black:       #0A0A0A;
+  --black-rich:  #111111;
+  --black-soft:  #1A1A1A;
+  --grey-900:    #1F1E1E;
+  --grey-800:    #2A2A2A;
+  --grey-700:    #3D3D3D;
+  --grey-600:    #555555;
+  --grey-500:    #777777;
+  --grey-400:    #999999;
+  --grey-300:    #BBBBBB;
+  --grey-200:    #DDDDDD;
+  --grey-100:    #EEEEEE;
+  --grey-50:     #F5F5F5;
+  --white:       #FAFAFA;
+
+  /* Semantic */
+  --success: #3A9E6B;
+  --warning: #E8A838;
+  --error:   #D94F4F;
+  --info:    #4A90B8;
+
+  /* Radii */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-pill: 100px;
+
+  /* Layout */
+  --page-max-width: 1120px;
+  --page-padding:   40px;
+  --body-max-width: 64ch;
+  --nav-height:     56px;
+}
+
+/* ─── DARK THEME (default for Imbila) ─── */
+[data-theme="dark"],
+.imbila-dark,
+:root {
+  --bg:              #0A0A0A;
+  --bg-card:         #1F1E1E;
+  --bg-card-alt:     #111111;
+  --bg-code:         #1A1A1A;
+  --bg-nav:          rgba(10,10,10,0.88);
+  --text-primary:    #FAFAFA;
+  --text-heading:    #FAFAFA;
+  --text-body:       #BBBBBB;
+  --text-secondary:  #999999;
+  --text-muted:      #777777;
+  --text-code:       #EDAF42;
+  --border:          #2A2A2A;
+  --border-strong:   #3D3D3D;
+  --border-hover:    #555555;
+  --accent-link:     #EDAF42;
+  --accent-link-hover: #F5C96E;
+  --shadow-card:       0 1px 3px rgba(0,0,0,0.2);
+  --shadow-card-hover: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+/* ─── LIGHT THEME ─── */
+[data-theme="light"],
+.imbila-light {
+  --bg:              #FAFAFA;
+  --bg-card:         #FFFFFF;
+  --bg-card-alt:     #F5F5F5;
+  --bg-code:         #F5F5F5;
+  --bg-nav:          rgba(250,250,250,0.88);
+  --text-primary:    #0A0A0A;
+  --text-heading:    #0A0A0A;
+  --text-body:       #555555;
+  --text-secondary:  #777777;
+  --text-muted:      #999999;
+  --text-code:       #A67720;
+  --border:          #EEEEEE;
+  --border-strong:   #DDDDDD;
+  --border-hover:    #BBBBBB;
+  --accent-link:     #A67720;
+  --accent-link-hover: #EDAF42;
+  --shadow-card:       0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+  --shadow-card-hover: 0 4px 16px rgba(0,0,0,0.07);
+}

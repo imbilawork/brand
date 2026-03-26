@@ -1,0 +1,260 @@
+{
+  "$schema": "https://raw.githubusercontent.com/imbilawork/agentbrand/main/schema.json",
+  "meta": {
+    "name": "Imbila.AI",
+    "version": "3.0.0",
+    "updated": "2026-03-26",
+    "source": "https://brand.imbila.ai",
+    "repo": "https://github.com/imbilawork/agentbrand",
+    "description": "Machine-readable brand tokens for AI agents, websites, and build tools. Import this file to get canonical colors, typography, spacing, voice rules, and logo references.",
+    "owner": "Craig Leppan, Founder",
+    "location": "Johannesburg, South Africa",
+    "license": "Proprietary — Imbila.AI brand assets. Use only with permission."
+  },
+
+  "colors": {
+    "honey": {
+      "DEFAULT": "#EDAF42",
+      "light": "#F5C96E",
+      "dark": "#C8922F",
+      "deep": "#A67720",
+      "wash": "#FAE0A5",
+      "alpha": {
+        "08": "rgba(237,175,66,0.08)",
+        "10": "rgba(237,175,66,0.10)",
+        "15": "rgba(237,175,66,0.15)",
+        "25": "rgba(237,175,66,0.25)"
+      },
+      "usage": "Primary accent. CTAs, links, tags, highlights, section labels. Never as background fill for large areas."
+    },
+    "black": {
+      "DEFAULT": "#0A0A0A",
+      "rich": "#111111",
+      "soft": "#1A1A1A",
+      "usage": "Page backgrounds (dark theme). #0A0A0A is the canonical page bg."
+    },
+    "grey": {
+      "900": "#1F1E1E",
+      "800": "#2A2A2A",
+      "700": "#3D3D3D",
+      "600": "#555555",
+      "500": "#777777",
+      "400": "#999999",
+      "300": "#BBBBBB",
+      "200": "#DDDDDD",
+      "100": "#EEEEEE",
+      "50": "#F5F5F5",
+      "usage": {
+        "900": "Card backgrounds (dark theme)",
+        "800": "Borders (dark theme)",
+        "700": "Dividers, secondary borders",
+        "600": "Body text (light theme)",
+        "500": "Labels, meta text",
+        "400": "Secondary text (dark theme)",
+        "300": "Body text (dark theme)",
+        "200": "Borders (light theme)",
+        "100": "Borders (light theme)",
+        "50": "Card backgrounds (light theme), code blocks (light theme)"
+      }
+    },
+    "white": "#FAFAFA",
+    "semantic": {
+      "success": "#3A9E6B",
+      "warning": "#E8A838",
+      "error": "#D94F4F",
+      "info": "#4A90B8"
+    },
+    "ratio": {
+      "black": 60,
+      "dark_grey": 20,
+      "honey": 12,
+      "white": 8,
+      "rule": "Black dominates. Gold punctuates. Honey is never a background colour for large areas."
+    }
+  },
+
+  "themes": {
+    "dark": {
+      "bg": "#0A0A0A",
+      "bg_card": "#1F1E1E",
+      "bg_card_alt": "#111111",
+      "bg_code": "#1A1A1A",
+      "bg_nav": "rgba(10,10,10,0.88)",
+      "text_primary": "#FAFAFA",
+      "text_heading": "#FAFAFA",
+      "text_body": "#BBBBBB",
+      "text_secondary": "#999999",
+      "text_muted": "#777777",
+      "text_code": "#EDAF42",
+      "border": "#2A2A2A",
+      "border_strong": "#3D3D3D",
+      "border_hover": "#555555",
+      "accent_link": "#EDAF42",
+      "accent_link_hover": "#F5C96E",
+      "shadow_card": "0 1px 3px rgba(0,0,0,0.2)",
+      "shadow_card_hover": "0 4px 16px rgba(0,0,0,0.3)"
+    },
+    "light": {
+      "bg": "#FAFAFA",
+      "bg_card": "#FFFFFF",
+      "bg_card_alt": "#F5F5F5",
+      "bg_code": "#F5F5F5",
+      "bg_nav": "rgba(250,250,250,0.88)",
+      "text_primary": "#0A0A0A",
+      "text_heading": "#0A0A0A",
+      "text_body": "#555555",
+      "text_secondary": "#777777",
+      "text_muted": "#999999",
+      "text_code": "#A67720",
+      "border": "#EEEEEE",
+      "border_strong": "#DDDDDD",
+      "border_hover": "#BBBBBB",
+      "accent_link": "#A67720",
+      "accent_link_hover": "#EDAF42",
+      "shadow_card": "0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03)",
+      "shadow_card_hover": "0 4px 16px rgba(0,0,0,0.07)"
+    }
+  },
+
+  "font": {
+    "family": "DM Sans",
+    "fallback": "system-ui, -apple-system, sans-serif",
+    "css_stack": "'DM Sans', system-ui, -apple-system, sans-serif",
+    "google_import": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&display=swap",
+    "weights": {
+      "light": 300,
+      "body": 400,
+      "ui": 500,
+      "subhead": 600,
+      "heading": 700,
+      "display": 800
+    },
+    "rules": [
+      "DM Sans is the only permitted font.",
+      "No Inter, Roboto, or serif faces.",
+      "Fallback: system-ui, -apple-system, sans-serif."
+    ]
+  },
+
+  "typography": {
+    "display": { "size": "clamp(40px, 5vw, 56px)", "weight": 800, "line_height": 1.05, "letter_spacing": "-0.035em" },
+    "h2": { "size": "clamp(28px, 3.5vw, 36px)", "weight": 700, "line_height": 1.12, "letter_spacing": "-0.025em" },
+    "h3_label": { "size": "11px", "weight": 700, "line_height": 1.3, "letter_spacing": "0.14em", "text_transform": "uppercase" },
+    "h4": { "size": "18px", "weight": 600 },
+    "body": { "size": "16px", "weight": 400, "line_height": 1.7, "max_width": "64ch" },
+    "small": { "size": "13px", "weight": 500 },
+    "section_label": { "size": "10px", "weight": 700, "letter_spacing": "0.2em", "text_transform": "uppercase", "pattern": "01 · Section Name" }
+  },
+
+  "radii": {
+    "sm": "6px",
+    "md": "10px",
+    "lg": "16px",
+    "pill": "100px",
+    "usage": { "cards": "lg (16px)", "inputs": "md (10px)", "buttons": "pill (100px)", "tags": "pill (100px)" }
+  },
+
+  "layout": {
+    "page_max_width": "1120px",
+    "page_padding": "40px",
+    "page_padding_mobile": "20px",
+    "body_max_width": "64ch",
+    "section_padding": "100px 0",
+    "section_padding_mobile": "64px 0",
+    "nav_height": "56px"
+  },
+
+  "components": {
+    "card": { "bg": "var(--bg-card)", "border": "1px solid var(--border)", "radius": "16px", "padding": "28px" },
+    "button_primary": { "bg": "#EDAF42", "color": "#0A0A0A", "radius": "100px", "padding": "10px 24px", "font_size": "14px", "font_weight": 600 },
+    "button_secondary": { "bg": "transparent", "border": "1px solid var(--border-strong)", "radius": "100px" },
+    "tag": { "bg": "rgba(237,175,66,0.10)", "border": "1px solid rgba(237,175,66,0.15)", "radius": "100px", "font_size": "12px", "color": "#EDAF42" },
+    "callout": { "bg": "var(--bg-card)", "border_left": "3px solid #EDAF42", "radius": "16px", "padding": "24px 28px" },
+    "nav": { "height": "56px", "bg": "rgba(10,10,10,0.88)", "backdrop_filter": "blur(16px) saturate(1.4)", "position": "sticky" }
+  },
+
+  "logo": {
+    "description": "Geometric angular honey badger head in profile. Honey gold (#EDAF42) and black (#0A0A0A). The primary mark is the full traced honey badger silhouette.",
+    "animal": "Honey Badger",
+    "files": {
+      "mark_traced": "logos/imbila-mark-traced.svg",
+      "mark_circle_dark": "logos/imbila-mark.svg",
+      "mark_circle_light": "logos/imbila-mark-light.svg",
+      "dot": "logos/imbila-dot.svg",
+      "logomark_page": "logos/logomark.html"
+    },
+    "inline_svg": {
+      "circle_dark": "<svg viewBox=\"0 0 32 32\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"16\" cy=\"16\" r=\"15\" fill=\"#0A0A0A\" stroke=\"#3D3D3D\" stroke-width=\"1\"/><circle cx=\"16\" cy=\"16\" r=\"6\" fill=\"#EDAF42\"/></svg>",
+      "circle_light": "<svg viewBox=\"0 0 32 32\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"16\" cy=\"16\" r=\"15\" fill=\"#FFFFFF\" stroke=\"#DDDDDD\" stroke-width=\"1\"/><circle cx=\"16\" cy=\"16\" r=\"6\" fill=\"#EDAF42\"/></svg>",
+      "dot": "<svg viewBox=\"0 0 32 32\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"16\" cy=\"16\" r=\"6\" fill=\"#EDAF42\"/></svg>"
+    },
+    "note": "The full honey badger mark is in imbila-mark-traced.svg (1024x1024 viewBox). For inline/nav use, the simplified circle+dot marks work at small sizes.",
+    "wordmark_html": "<span style=\"font-family:'DM Sans',system-ui,sans-serif;font-weight:600;color:#FAFAFA;\">Imbila<em style=\"font-style:normal;color:#EDAF42;font-weight:700;\">.AI</em></span>",
+    "approved_backgrounds": ["#0A0A0A", "#1F1E1E", "#FFFFFF"],
+    "restrictions": [
+      "No gradients on or behind the logo",
+      "No rotation or distortion",
+      "No colour changes",
+      "No low-contrast backgrounds",
+      "No glows or drop shadows"
+    ]
+  },
+
+  "voice": {
+    "personality": "Sharp, experienced colleague. Not a corporate brochure. Anti-hype.",
+    "tagline": "AI Strategy & Implementation That Actually Delivers ROI",
+    "tagline_supporting": "Clarity, not chaos. Speed, not risk.",
+    "tone_notes": "South African voice — natural, not performative. Not Silicon Valley.",
+    "tiers": {
+      "enterprise": "Measured, authoritative, governance-aware",
+      "studio": "Energetic, direct, action-oriented",
+      "dojo": "Conversational, opinionated, insightful"
+    },
+    "approved_phrases": [
+      "Clarity into execution",
+      "Working solutions, not just advice",
+      "Weeks, not months",
+      "Capability, not dependency",
+      "No transformation theater",
+      "The smartest system is the one that keeps learning"
+    ],
+    "banned_phrases": [
+      "Digital transformation",
+      "Leverage synergies",
+      "AI revolution / AI disruption (without context)",
+      "Cutting-edge / state-of-the-art",
+      "We believe that potentially...",
+      "Paradigm shift / next-gen"
+    ]
+  },
+
+  "brand": {
+    "animal": "Honey Badger",
+    "animal_note": "Not the hyrax/dassie. All references updated to honey badger.",
+    "name_origin": "isiZulu",
+    "proverb": "Imbila yeswela umsila ngokuyalezela — the creature that lost its tail by sending others. Don't delegate your own AI journey.",
+    "ethos": "Help the underdogs compete. Don't back down. Move fast. Get results.",
+    "traits": ["Fearless", "Tenacious", "Resourceful", "Direct", "Punches above its weight"]
+  },
+
+  "architecture": {
+    "tiers": {
+      "enterprise": { "audience": "50+ employees, regulated industries, board-level", "services": ["AI Readiness Assessment", "Fractional AI Leadership", "Implementation & Integration", "MindFront.ai Alliance", "SOC2 Assessment"] },
+      "studio": { "audience": "Consultants, agencies <20, small business, freelancers", "services": ["AI Clarity Audits", "Co-Design Labs", "AI Sprints & Roadmaps", "AI-Augmented Service Delivery"] },
+      "dojo": { "audience": "Community, newsletter, workshop attendees, self-learners", "services": ["Blog", "AI Mastery Workshops (Workshop17)", "AI Assessment", "YouTube", "Podcast", "Anthropic Academy guided courses"] }
+    },
+    "domains": {
+      "www.imbila.ai": "Main site (Ghost)",
+      "brand.imbila.ai": "Brand guide (Static HTML)",
+      "claude.imbila.ai": "Anthropic Academy (Static HTML)"
+    },
+    "links": {
+      "website": "https://imbila.ai",
+      "linkedin": "https://www.linkedin.com/company/imbila-ai",
+      "blog": "https://imbila.ai",
+      "contact": "https://imbila.ai/contact_us/",
+      "assessment": "https://imbila.ai/ai-workshop-mastery-assessment/",
+      "workshop": "https://imbila.ai/ai-workshop-mastery-session/"
+    }
+  }
+}

@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imbila.AI — Brand Guide v3.0</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════
+   IMBILA.AI DESIGN TOKENS v3.0 — SINGLE SOURCE OF TRUTH
+   Copy :root into any project.
+   ═══════════════════════════════════════════════ */
+:root {
+  --honey:       #EDAF42;
+  --honey-light: #F5C96E;
+  --honey-dark:  #C8922F;
+  --honey-deep:  #A67720;
+  --honey-wash:  #FAE0A5;
+  --honey-glow:  rgba(237,175,66,0.08);
+  --honey-10:    rgba(237,175,66,0.10);
+  --honey-15:    rgba(237,175,66,0.15);
+  --honey-25:    rgba(237,175,66,0.25);
+
+  --black:       #0A0A0A;
+  --black-rich:  #111111;
+  --black-soft:  #1A1A1A;
+
+  --grey-900: #1F1E1E;
+  --grey-800: #2A2A2A;
+  --grey-700: #3D3D3D;
+  --grey-600: #555555;
+  --grey-500: #777777;
+  --grey-400: #999999;
+  --grey-300: #BBBBBB;
+  --grey-200: #DDDDDD;
+  --grey-100: #EEEEEE;
+  --grey-50:  #F5F5F5;
+  --white:    #FAFAFA;
+
+  --success: #3A9E6B;
+  --warning: #E8A838;
+  --error:   #D94F4F;
+  --info:    #4A90B8;
+
+  --font: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 100px;
+}
+
+/* ─── RESET ─── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font); color: var(--grey-300); background: var(--black); line-height: 1.65; }
+a { color: var(--honey); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--honey-light); }
+img { max-width: 100%; display: block; }
+::selection { background: var(--honey-25); color: var(--white); }
+
+/* ─── LAYOUT ─── */
+.page { max-width: 1120px; margin: 0 auto; padding: 0 40px; }
+section { padding: 100px 0; border-bottom: 1px solid var(--grey-800); }
+section:last-of-type { border-bottom: none; }
+
+@media (max-width: 768px) {
+  .page { padding: 0 20px; }
+  section { padding: 64px 0; }
+}
+
+/* ─── TYPOGRAPHY ─── */
+h1 { font-size: clamp(40px, 5vw, 56px); font-weight: 800; line-height: 1.05; letter-spacing: -0.035em; color: var(--white); }
+h2 { font-size: clamp(28px, 3.5vw, 36px); font-weight: 700; line-height: 1.12; letter-spacing: -0.025em; color: var(--white); margin-bottom: 16px; }
+h3 { font-size: 11px; font-weight: 700; line-height: 1.3; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey-500); margin-bottom: 10px; }
+h4 { font-size: 18px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+p { font-size: 16px; font-weight: 400; line-height: 1.7; color: var(--grey-300); max-width: 64ch; }
+p + p { margin-top: 12px; }
+.accent { color: var(--honey); }
+.dim { color: var(--grey-500); }
+.strong { color: var(--white); font-weight: 600; }
+
+/* ─── NAV ─── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10,10,10,0.88);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom: 1px solid var(--grey-800);
+  padding: 0 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px;
+}
+.nav-brand { display: flex; align-items: center; gap: 10px; }
+.nav-brand svg { width: 26px; height: 26px; }
+.nav-brand span { font-size: 14px; font-weight: 600; color: var(--grey-200); letter-spacing: -0.01em; }
+.nav-brand em { font-style: normal; color: var(--honey); font-weight: 700; }
+.nav-links { display: flex; gap: 6px; }
+.nav-links a {
+  font-size: 12px; font-weight: 500; color: var(--grey-400);
+  padding: 6px 14px; border-radius: var(--radius-pill);
+  transition: all 0.2s; letter-spacing: 0.01em;
+}
+.nav-links a:hover { color: var(--honey); background: var(--honey-10); }
+.nav-tag {
+  font-size: 10px; font-weight: 600; color: var(--honey-dark);
+  padding: 3px 10px; border: 1px solid var(--honey-15);
+  border-radius: var(--radius-pill); letter-spacing: 0.06em;
+}
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+}
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 88vh;
+  display: flex; flex-direction: column; justify-content: center;
+  align-items: center; text-align: center;
+  padding: 80px 40px; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 48%, rgba(237,175,66,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 20% at 50% 50%, rgba(237,175,66,0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero-mark {
+  width: 120px; height: 120px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 40px; position: relative;
+  animation: markIn 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-mark svg { width: 120px; height: 120px; }
+.hero h1 { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both; }
+.hero .hero-sub {
+  font-size: 15px; font-weight: 500; color: var(--grey-400);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  margin-top: 16px; max-width: 50ch;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+.hero .hero-meta {
+  display: flex; gap: 24px; margin-top: 32px;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+}
+.hero .hero-meta span {
+  font-size: 12px; color: var(--grey-500); font-weight: 500;
+  padding: 5px 16px; border: 1px solid var(--grey-800); border-radius: var(--radius-pill);
+}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes markIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+
+/* ─── SECTION HEADER ─── */
+.section-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--honey-dark); margin-bottom: 10px;
+}
+
+/* ─── GRID ─── */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+.grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; }
+@media (max-width: 900px) { .grid-3, .grid-4 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+
+/* ─── CARDS ─── */
+.card {
+  background: var(--grey-900);
+  border: 1px solid var(--grey-800);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.card:hover { border-color: var(--grey-600); transform: translateY(-2px); }
+
+/* ─── COLOR SWATCHES ─── */
+.swatch-group { margin-bottom: 32px; }
+.swatch-group-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey-500); margin-bottom: 10px; }
+.swatch-strip { display: flex; gap: 2px; border-radius: var(--radius-md); overflow: hidden; }
+.swatch {
+  flex: 1; min-height: 80px; display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 10px 12px; cursor: pointer;
+  transition: transform 0.2s; position: relative;
+}
+.swatch:hover { transform: scaleY(1.08); transform-origin: bottom; }
+.swatch-primary { flex: 2.5; min-height: 100px; }
+.swatch-name { font-size: 11px; font-weight: 600; }
+.swatch-hex { font-size: 10px; font-weight: 500; opacity: 0.7; margin-top: 2px; }
+.swatch-var { font-size: 9px; font-weight: 500; opacity: 0.5; font-family: monospace; }
+.on-dark .swatch-name, .on-dark .swatch-hex, .on-dark .swatch-var { color: var(--white); }
+.on-light .swatch-name, .on-light .swatch-hex, .on-light .swatch-var { color: var(--black); }
+.swatch .copied {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  background: var(--black); color: var(--honey); font-size: 10px; font-weight: 700;
+  padding: 4px 10px; border-radius: var(--radius-pill);
+  opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  letter-spacing: 0.06em;
+}
+.swatch.flash .copied { opacity: 1; }
+
+/* ─── TYPE SPECIMEN ─── */
+.type-specimen { margin-top: 32px; }
+.type-row {
+  display: flex; align-items: baseline; gap: 32px;
+  padding: 20px 0; border-bottom: 1px solid var(--grey-800);
+}
+.type-row:last-child { border-bottom: none; }
+.type-label {
+  flex: 0 0 120px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--grey-500);
+}
+.type-sample { flex: 1; color: var(--white); }
+.type-meta { flex: 0 0 200px; text-align: right; font-size: 12px; color: var(--grey-600); font-family: monospace; }
+@media (max-width: 768px) {
+  .type-row { flex-direction: column; gap: 6px; }
+  .type-meta { text-align: left; }
+  .type-label { flex: unset; }
+}
+
+/* ─── TOKEN BLOCK ─── */
+.token-block {
+  background: var(--black-soft);
+  border: 1px solid var(--grey-800);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  overflow-x: auto;
+  position: relative;
+}
+.token-block pre {
+  font-family: 'DM Sans', monospace;
+  font-size: 13px; line-height: 1.8; color: var(--grey-400);
+  white-space: pre;
+}
+.tk { color: var(--honey); }
+.tv { color: var(--grey-200); }
+.tc { color: var(--grey-600); font-style: italic; }
+.copy-btn {
+  position: absolute; top: 16px; right: 16px;
+  background: var(--grey-800); border: 1px solid var(--grey-700);
+  color: var(--grey-300); font-size: 11px; font-weight: 600;
+  padding: 6px 14px; border-radius: var(--radius-pill);
+  cursor: pointer; transition: all 0.2s;
+  font-family: var(--font); letter-spacing: 0.04em;
+}
+.copy-btn:hover { background: var(--honey-15); color: var(--honey); border-color: var(--honey-dark); }
+
+/* ─── LOGO SYSTEM ─── */
+.logo-showcase {
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-lg); padding: 40px;
+  min-height: 200px; border: 1px solid var(--grey-800);
+}
+.logo-caption {
+  text-align: center; margin-top: 8px; font-size: 12px; color: var(--grey-500);
+}
+.size-strip {
+  display: flex; align-items: flex-end; gap: 24px; flex-wrap: wrap;
+  padding: 40px; background: var(--grey-900); border-radius: var(--radius-lg);
+  border: 1px solid var(--grey-800);
+}
+.size-strip > div { text-align: center; }
+.size-strip .lb { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--grey-500); margin-top: 6px; }
+
+/* ─── ARCHITECTURE ─── */
+.arch-card {
+  border-radius: var(--radius-lg); padding: 32px;
+  border: 1px solid var(--grey-800);
+  position: relative; overflow: hidden;
+}
+.arch-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.arch-e::before { background: var(--honey); }
+.arch-s::before { background: var(--honey-dark); }
+.arch-d::before { background: var(--grey-600); }
+.arch-card h4 { font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+.arch-aud { font-size: 12px; color: var(--grey-500); margin-bottom: 14px; font-weight: 500; }
+.arch-card p { font-size: 14px; color: var(--grey-400); line-height: 1.7; }
+
+/* ─── COMPONENT DEMOS ─── */
+.demo-area {
+  background: var(--black-soft);
+  border: 1px solid var(--grey-800);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+  justify-content: center;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 24px; border-radius: var(--radius-pill);
+  font-family: var(--font); font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: all 0.2s; border: none;
+  letter-spacing: 0.01em;
+}
+.btn-primary { background: var(--honey); color: var(--black); }
+.btn-primary:hover { background: var(--honey-light); transform: translateY(-1px); }
+.btn-secondary { background: transparent; color: var(--grey-200); border: 1px solid var(--grey-700); }
+.btn-secondary:hover { border-color: var(--honey); color: var(--honey); }
+.btn-ghost { background: transparent; color: var(--grey-400); }
+.btn-ghost:hover { color: var(--honey); }
+
+.tag {
+  display: inline-block; padding: 4px 14px;
+  background: var(--honey-10); border: 1px solid var(--honey-15);
+  border-radius: var(--radius-pill);
+  font-size: 12px; font-weight: 500; color: var(--honey);
+}
+
+.input-demo {
+  background: var(--grey-900); border: 1px solid var(--grey-700);
+  border-radius: var(--radius-md); padding: 10px 16px;
+  font-family: var(--font); font-size: 14px; color: var(--white);
+  outline: none; transition: border-color 0.2s; width: 240px;
+}
+.input-demo:focus { border-color: var(--honey); }
+.input-demo::placeholder { color: var(--grey-600); }
+
+/* ─── VOICE ─── */
+.voice-card {
+  background: var(--grey-900); border: 1px solid var(--grey-800);
+  border-radius: var(--radius-lg); padding: 28px;
+  transition: border-color 0.25s;
+}
+.voice-card:hover { border-color: var(--grey-600); }
+.voice-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.voice-enterprise .voice-label { color: var(--honey); }
+.voice-studio .voice-label { color: var(--honey-dark); }
+.voice-dojo .voice-label { color: var(--grey-400); }
+.voice-card blockquote {
+  font-size: 16px; font-weight: 400; color: var(--grey-200);
+  line-height: 1.7; font-style: italic; padding-left: 16px;
+  border-left: 2px solid var(--grey-700);
+}
+
+/* ─── DO / DON'T ─── */
+.dd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 24px; }
+@media (max-width: 600px) { .dd-grid { grid-template-columns: 1fr; } }
+.dd-col h4 { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+.dd-do { color: var(--success); }
+.dd-dont { color: var(--error); }
+.dd-item {
+  padding: 10px 16px; margin-bottom: 6px;
+  font-size: 14px; color: var(--grey-300);
+  border-radius: var(--radius-md);
+  background: var(--grey-900); border: 1px solid var(--grey-800);
+}
+
+/* ─── MISUSE GRID ─── */
+.misuse-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+@media (max-width: 700px) { .misuse-grid { grid-template-columns: 1fr 1fr; } }
+.misuse-card {
+  border-radius: var(--radius-md); overflow: hidden;
+  border: 1px solid var(--grey-800);
+}
+.misuse-vis {
+  height: 80px; display: flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 600;
+}
+.misuse-label {
+  padding: 10px 14px; font-size: 11px; font-weight: 600; color: var(--error);
+  background: var(--grey-900); letter-spacing: 0.02em;
+}
+
+/* ─── AUDIT TABLE ─── */
+.audit-table {
+  width: 100%; border-collapse: collapse; margin-top: 24px;
+  font-size: 14px;
+}
+.audit-table th {
+  text-align: left; padding: 12px 16px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--grey-500);
+  border-bottom: 1px solid var(--grey-700);
+}
+.audit-table td {
+  padding: 14px 16px; border-bottom: 1px solid var(--grey-800);
+  color: var(--grey-300); vertical-align: top;
+}
+.audit-table tr:last-child td { border-bottom: none; }
+.status-gap { color: var(--error); font-weight: 600; }
+.status-partial { color: var(--warning); font-weight: 600; }
+.status-ok { color: var(--success); font-weight: 600; }
+
+/* ─── AGENT INSTRUCTIONS ─── */
+.agent-block {
+  background: linear-gradient(135deg, rgba(237,175,66,0.04), rgba(237,175,66,0.01));
+  border: 1px solid var(--honey-15);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+.agent-block h4 { color: var(--honey); margin-bottom: 12px; }
+.agent-block ul { list-style: none; padding: 0; }
+.agent-block li {
+  padding: 8px 0; padding-left: 20px; position: relative;
+  font-size: 14px; color: var(--grey-300); line-height: 1.6;
+}
+.agent-block li::before {
+  content: '→'; position: absolute; left: 0; color: var(--honey-dark);
+  font-weight: 700;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  padding: 48px 0; text-align: center;
+  border-top: 1px solid var(--grey-800);
+}
+footer p { margin: 0 auto; }
+
+/* ─── ORIGIN ─── */
+.divider { width: 40px; height: 2px; background: var(--honey); margin: 16px 0; }
+
+/* ─── USAGE RATIO ─── */
+.ratio-bar { display: flex; height: 40px; border-radius: 8px; overflow: hidden; max-width: 500px; }
+.ratio-labels { display: flex; max-width: 500px; margin-top: 6px; }
+.ratio-labels span { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--grey-500); }
+</style>
+</head>
+<body>
+
+<!-- HIDDEN SVG DEFS — Imbila honey badger mark defined once, used everywhere -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <defs>
+    <g id="imbila-mark">
+<path d="M0 0 C26.686 -0.238 53.344 0.399 80.02 1.091 C83.808 1.189 87.596 1.286 91.385 1.382 C171.26 3.427 251.128 5.924 362.162 10.064 C365.26 10.185 368.359 10.306 371.458 10.426 C410.094 11.928 440.974 15.571 476.438 31.688 C477.342 32.097 478.246 32.507 479.178 32.93 C496.811 40.925 514.308 49.193 531.772 57.548 C540.251 61.603 548.749 65.616 557.25 69.625 C559.466 70.671 561.683 71.716 563.899 72.762 C565.372 73.457 566.844 74.151 568.316 74.846 C573.634 77.354 578.95 79.868 584.266 82.383 C587.344 83.839 590.422 85.294 593.5 86.75 C594.256 87.108 595.012 87.465 595.791 87.834 C605.485 92.417 615.2 96.949 624.938 101.438 C636.673 106.852 648.289 112.495 659.898 118.173 C671.111 123.655 682.37 129.008 693.711 134.221 C699.902 137.074 706.064 139.979 712.195 142.957 C712.889 143.294 713.582 143.631 714.297 143.978 C717.651 145.609 721.001 147.246 724.349 148.889 C730.981 152.134 737.645 155.195 744.494 157.957 C746.72 158.884 748.86 159.891 751 161 C749.347 166.838 746.53 171.928 743.688 177.25 C739.137 185.863 734.706 194.525 730.375 203.25 C726.418 211.207 722.402 219.12 718.23 226.966 C713.565 235.765 709.041 244.637 704.5 253.5 C692.36 277.184 692.36 277.184 688.225 284.895 C686.297 288.491 684.461 292.105 682.723 295.797 C682.339 296.586 681.955 297.375 681.559 298.188 C680.841 299.668 680.146 301.159 679.48 302.663 C677.594 306.484 676.024 308.374 671.957 309.832 C670.315 310.264 668.661 310.651 667 311 C666.134 311.184 665.267 311.368 664.375 311.558 C661.34 312.152 658.299 312.675 655.25 313.188 C652.733 313.623 650.216 314.059 647.699 314.496 C647.019 314.613 646.338 314.73 645.636 314.851 C640.093 315.805 634.556 316.79 629.02 317.785 C558.071 330.524 486.927 342.181 415.593 352.547 C411.438 353.151 407.285 353.77 403.134 354.397 C394.127 355.747 385.163 357.086 376.078 357.781 C363.598 358.362 363.598 358.362 353.078 364.238 C350.334 367.512 348.257 371.051 346.242 374.807 C344.172 378.462 341.574 381.691 339 385 C337.995 386.335 336.992 387.673 335.992 389.012 C334.02 391.641 332.046 394.268 330.07 396.895 C321.721 407.996 313.482 419.177 305.257 430.372 C298.075 440.148 290.843 449.883 283.546 459.574 C279.36 465.149 275.251 470.773 271.188 476.438 C266.789 482.568 262.282 488.581 257.652 494.539 C253.783 499.552 250.061 504.674 246.315 509.779 C242.082 515.544 237.801 521.27 233.491 526.978 C230.761 530.608 228.078 534.268 225.434 537.961 C224.84 538.79 224.247 539.619 223.635 540.472 C222.482 542.088 221.332 543.706 220.187 545.326 C219.669 546.053 219.151 546.779 218.617 547.527 C217.931 548.498 217.931 548.498 217.23 549.488 C216 551 216 551 214 552 C212.422 552.03 210.843 551.992 209.266 551.92 C208.281 551.877 207.297 551.835 206.282 551.791 C205.209 551.74 204.135 551.688 203.029 551.635 C201.91 551.585 200.79 551.536 199.638 551.485 C197.272 551.38 194.906 551.273 192.541 551.163 C189.202 551.009 185.863 550.863 182.524 550.719 C175.863 550.434 169.203 550.139 162.543 549.844 C160.093 549.735 157.643 549.627 155.193 549.519 C150.107 549.294 145.02 549.069 139.934 548.843 C133.472 548.557 127.01 548.271 120.547 547.986 C115.505 547.763 110.463 547.54 105.421 547.317 C103.04 547.211 100.659 547.106 98.278 547.001 C90.851 546.673 83.426 546.339 76 546 C75.041 545.957 74.082 545.914 73.094 545.869 C70.379 545.746 67.665 545.619 64.95 545.49 C64.171 545.455 63.391 545.42 62.588 545.385 C57.337 545.13 52.249 544.583 47 544 C48.98 537.4 50.96 530.8 53 524 C50.768 528.463 49.356 533.012 47.943 537.775 C47.384 539.547 46.7 541.279 46 543 C42.44 544.187 39.562 544.097 35.812 544.062 C34.54 544.053 33.268 544.044 31.957 544.035 C30.493 544.018 30.493 544.018 29 544 C29 543.67 29 543.34 29 543 C27.924 543.012 26.847 543.023 25.738 543.035 C17.69 543.094 9.757 542.967 1.734 542.219 C-0.858 542.011 -3.401 541.962 -6 542 C-6 540.35 -6 538.7 -6 537 C-6.33 537.99 -6.66 538.98 -7 540 C-7.66 540 -8.32 540 -9 540 C-10.34 538.637 -10.34 538.637 -11.938 536.688 C-15.769 532.168 -19.919 528.044 -24.156 523.906 C-26.258 521.811 -28.202 519.624 -30.129 517.367 C-33.11 513.923 -36.258 510.677 -39.496 507.477 C-39.979 507 -40.461 506.523 -40.958 506.031 C-42.963 504.054 -44.972 502.08 -46.985 500.111 C-48.472 498.654 -49.953 497.191 -51.434 495.727 C-52.311 494.866 -53.188 494.006 -54.092 493.12 C-56 491 -56 491 -56 489 C-56.66 489 -57.32 489 -58 489 C-60.187 487.5 -60.187 487.5 -62 485 C-61.595 479.744 -60.581 474.756 -59.363 469.625 C-59.203 468.946 -59.043 468.267 -58.878 467.567 C-58.36 465.377 -57.837 463.189 -57.312 461 C-56.953 459.484 -56.594 457.967 -56.234 456.451 C-53.823 446.302 -51.336 436.173 -48.728 426.072 C-48.498 425.173 -48.268 424.274 -48.031 423.348 C-47.831 422.574 -47.63 421.801 -47.424 421.004 C-46.897 418.852 -46.897 418.852 -47 416 C-47.141 416.578 -47.283 417.157 -47.429 417.753 C-48.921 423.854 -50.414 429.955 -51.907 436.056 C-52.462 438.323 -53.017 440.591 -53.571 442.858 C-56.683 455.58 -59.803 468.299 -63 481 C-70.667 474.667 -70.667 474.667 -72 472 C-73.333 471.332 -74.666 470.666 -76 470 C-80.489 466.129 -84.311 461.535 -88.168 457.051 C-90.722 454.191 -93.449 451.525 -96.203 448.859 C-101 443.896 -101 443.896 -101 441 C-101.835 440.66 -101.835 440.66 -102.688 440.312 C-105.662 438.624 -107.72 436.533 -110 434 C-110 433.34 -110 432.68 -110 432 C-111.32 431.34 -112.64 430.68 -114 430 C-114 429.01 -114 428.02 -114 427 C-116.154 425.058 -116.154 425.058 -119 423 C-122.735 420.028 -126.133 416.957 -129.234 413.32 C-132.996 408.972 -136.916 404.793 -140.875 400.625 C-145.938 395.27 -150.959 389.889 -155.863 384.387 C-158.385 381.569 -160.941 378.784 -163.5 376 C-167.627 371.507 -171.739 367.003 -175.785 362.438 C-177.335 360.732 -178.93 359.068 -180.559 357.438 C-181.385 356.592 -182.211 355.746 -183.062 354.875 C-183.817 354.13 -184.571 353.385 -185.348 352.617 C-189.334 346.302 -186.326 336.761 -185.164 329.809 C-184.969 328.616 -184.775 327.423 -184.574 326.193 C-184.043 322.95 -183.505 319.707 -182.963 316.465 C-182.623 314.425 -182.285 312.386 -181.947 310.346 C-176.05 274.731 -169.752 239.182 -162.647 203.787 C-162.262 201.868 -161.879 199.949 -161.5 198.029 C-160.98 195.411 -160.447 192.795 -159.91 190.18 C-159.761 189.418 -159.611 188.656 -159.457 187.871 C-158.047 181.155 -155.607 177.227 -150.5 172.75 C-149.611 171.969 -148.721 171.188 -147.805 170.383 C-144.202 167.322 -140.528 164.355 -136.852 161.383 C-133.811 158.842 -130.9 156.198 -128 153.5 C-123.367 149.19 -118.579 145.149 -113.648 141.18 C-111.027 139.022 -108.508 136.787 -106 134.5 C-102.625 131.423 -99.182 128.489 -95.625 125.625 C-91.072 121.944 -86.766 118.074 -82.483 114.089 C-78.372 110.286 -74.077 106.757 -69.715 103.246 C-66.893 100.912 -64.194 98.48 -61.5 96 C-57.107 91.961 -52.582 88.156 -47.941 84.406 C-44.626 81.694 -41.371 78.919 -38.125 76.125 C-37.539 75.621 -36.952 75.117 -36.348 74.598 C-35.159 73.576 -33.97 72.554 -32.782 71.532 C-12.304 53.927 -12.304 53.927 -9.117 54.105 C-6.146 55.361 -4.428 57.252 -2.188 59.562 C-1.301 60.475 -0.414 61.388 0.5 62.328 C3.066 65.07 5.519 67.883 7.957 70.738 C11.235 74.367 14.743 77.763 18.219 81.2 C21.854 84.809 25.33 88.495 28.633 92.414 C29.084 92.937 29.535 93.461 30 94 C30.708 94.878 30.708 94.878 31.43 95.773 C31.948 96.178 32.466 96.583 33 97 C37.218 96.286 40.797 94.158 44.539 92.184 C45.261 91.808 45.983 91.432 46.727 91.044 C49.029 89.846 51.327 88.642 53.625 87.438 C56.656 85.848 59.691 84.264 62.727 82.684 C63.426 82.315 64.124 81.946 64.845 81.566 C69.774 79 69.774 79 72 79 C72 78.34 72 77.68 72 77 C71.01 76.67 70.02 76.34 69 76 C67.422 74.416 67.422 74.416 65.75 72.406 C62.281 68.32 58.679 64.397 55 60.5 C53.681 59.098 52.362 57.695 51.043 56.293 C50.374 55.583 49.706 54.873 49.017 54.142 C45.778 50.703 42.545 47.258 39.312 43.812 C38.686 43.145 38.059 42.477 37.414 41.789 C33.133 37.222 28.881 32.63 24.646 28.021 C21.732 24.856 18.794 21.716 15.84 18.59 C15.121 17.829 14.402 17.069 13.662 16.285 C12.253 14.796 10.842 13.308 9.43 11.823 C0 1.857 0 1.857 0 0 Z " fill="#0A0A0A" transform="translate(225,240)"/>
+<path d="M0 0 C26.686 -0.238 53.344 0.399 80.02 1.091 C83.808 1.189 87.596 1.286 91.385 1.382 C171.26 3.427 251.128 5.924 362.162 10.064 C365.26 10.185 368.359 10.306 371.458 10.426 C410.094 11.928 440.974 15.571 476.438 31.688 C477.342 32.097 478.246 32.507 479.178 32.93 C496.811 40.925 514.308 49.193 531.772 57.548 C540.251 61.603 548.749 65.616 557.25 69.625 C559.466 70.671 561.683 71.716 563.899 72.762 C565.372 73.457 566.844 74.151 568.316 74.846 C573.634 77.354 578.95 79.868 584.266 82.383 C587.344 83.839 590.422 85.294 593.5 86.75 C594.256 87.108 595.012 87.465 595.791 87.834 C605.485 92.417 615.2 96.949 624.938 101.438 C636.673 106.852 648.289 112.495 659.898 118.173 C671.111 123.655 682.37 129.008 693.711 134.221 C699.902 137.074 706.064 139.979 712.195 142.957 C712.889 143.294 713.582 143.631 714.297 143.978 C717.651 145.609 721.001 147.246 724.349 148.889 C730.981 152.134 737.645 155.195 744.494 157.957 C746.72 158.884 748.86 159.891 751 161 C749.347 166.838 746.53 171.928 743.688 177.25 C739.137 185.863 734.706 194.525 730.375 203.25 C726.418 211.207 722.402 219.12 718.23 226.966 C713.565 235.765 709.041 244.637 704.5 253.5 C692.36 277.184 692.36 277.184 688.225 284.895 C686.297 288.491 684.461 292.105 682.723 295.797 C682.339 296.586 681.955 297.375 681.559 298.188 C680.841 299.668 680.146 301.159 679.48 302.663 C677.594 306.484 676.024 308.374 671.957 309.832 C670.315 310.264 668.661 310.651 667 311 C666.134 311.184 665.267 311.368 664.375 311.558 C661.34 312.152 658.299 312.675 655.25 313.188 C652.733 313.623 650.216 314.059 647.699 314.496 C647.019 314.613 646.338 314.73 645.636 314.851 C640.093 315.805 634.556 316.79 629.02 317.785 C558.071 330.524 486.927 342.181 415.593 352.547 C411.438 353.151 407.285 353.77 403.134 354.397 C394.127 355.747 385.163 357.086 376.078 357.781 C363.598 358.362 363.598 358.362 353.078 364.238 C350.334 367.512 348.257 371.051 346.242 374.807 C344.172 378.462 341.574 381.691 339 385 C337.995 386.335 336.992 387.673 335.992 389.012 C334.02 391.641 332.046 394.268 330.07 396.895 C321.721 407.996 313.482 419.177 305.257 430.372 C298.075 440.148 290.843 449.883 283.546 459.574 C279.36 465.149 275.251 470.773 271.188 476.438 C266.789 482.568 262.282 488.581 257.652 494.539 C253.783 499.552 250.061 504.674 246.315 509.779 C242.082 515.544 237.801 521.27 233.491 526.978 C230.761 530.608 228.078 534.268 225.434 537.961 C224.84 538.79 224.247 539.619 223.635 540.472 C222.482 542.088 221.332 543.706 220.187 545.326 C219.669 546.053 219.151 546.779 218.617 547.527 C217.931 548.498 217.931 548.498 217.23 549.488 C216 551 216 551 214 552 C212.422 552.03 210.843 551.992 209.266 551.92 C208.281 551.877 207.297 551.835 206.282 551.791 C205.209 551.74 204.135 551.688 203.029 551.635 C201.91 551.585 200.79 551.536 199.638 551.485 C197.272 551.38 194.906 551.273 192.541 551.163 C189.202 551.009 185.863 550.863 182.524 550.719 C175.863 550.434 169.203 550.139 162.543 549.844 C160.093 549.735 157.643 549.627 155.193 549.519 C150.107 549.294 145.02 549.069 139.934 548.843 C133.472 548.557 127.01 548.271 120.547 547.986 C115.505 547.763 110.463 547.54 105.421 547.317 C103.04 547.211 100.659 547.106 98.278 547.001 C90.851 546.673 83.426 546.339 76 546 C75.041 545.957 74.082 545.914 73.094 545.869 C70.379 545.746 67.665 545.619 64.95 545.49 C64.171 545.455 63.391 545.42 62.588 545.385 C57.36 545.131 52.198 544.619 47 544 C51.102 530.095 55.392 516.258 59.874 502.47 C60.629 500.144 61.379 497.816 62.126 495.487 C70.844 468.327 80.898 441.67 91 415 C91.566 413.504 91.566 413.504 92.143 411.978 C94.245 406.427 96.353 400.878 98.473 395.334 C99.108 393.675 99.741 392.015 100.374 390.354 C101.244 388.074 102.119 385.797 102.996 383.52 C103.243 382.87 103.49 382.22 103.745 381.551 C112.255 359.599 135.705 337.557 156.625 326.812 C162.548 324.454 167.711 324.482 174 325 C174.884 325.072 175.768 325.144 176.679 325.218 C183.125 325.753 189.564 326.354 196 327 C194.573 330.79 192.842 334.259 190.875 337.797 C190.257 338.911 189.638 340.025 189.001 341.173 C188.334 342.365 187.667 343.558 187 344.75 C186.66 345.36 186.319 345.97 185.969 346.599 C180.957 355.58 175.863 364.505 170.587 373.334 C168.976 376.04 167.375 378.75 165.776 381.462 C150.092 408.058 150.092 408.058 142.422 420.049 C138.24 426.587 134.179 433.195 130.125 439.812 C121.844 453.31 113.427 466.72 104.754 479.969 C104.246 480.747 103.738 481.524 103.214 482.326 C102.272 483.766 101.325 485.203 100.374 486.637 C98.169 490.001 96.323 493.17 95 497 C103.81 503.939 112.621 510.845 121.794 517.299 C127.08 521.026 132.25 524.902 137.409 528.803 C139.268 530.208 141.134 531.604 143 533 C143.634 533.484 144.269 533.968 144.922 534.466 C148.559 537.306 148.559 537.306 153 538 C154.997 535.954 154.997 535.954 157 533.25 C160.355 529.002 163.803 524.953 167.5 521 C171.811 516.369 175.851 511.579 179.82 506.648 C181.978 504.027 184.213 501.508 186.5 499 C190.342 494.78 193.961 490.42 197.551 485.984 C200.318 482.612 203.152 479.303 206 476 C210.323 470.983 214.558 465.908 218.73 460.766 C221.241 457.706 223.805 454.697 226.375 451.688 C230.158 447.252 233.805 442.734 237.375 438.125 C241.78 432.442 246.419 427.008 251.164 421.606 C254.748 417.503 258.171 413.312 261.5 409 C265.91 403.291 270.549 397.826 275.3 392.399 C279.217 387.922 283.013 383.364 286.758 378.742 C289.762 375.068 292.837 371.455 295.912 367.84 C298.843 364.388 301.717 360.898 304.562 357.375 C308.434 352.617 312.5 348.073 316.66 343.566 C318.691 341.339 320.632 339.064 322.562 336.75 C330.908 327.209 339.938 322.973 352.387 321.754 C353.273 321.658 354.159 321.562 355.072 321.464 C356.963 321.26 358.855 321.061 360.747 320.866 C365.737 320.351 370.724 319.801 375.711 319.254 C376.697 319.147 377.683 319.039 378.698 318.929 C386.424 318.082 394.119 317.1 401.812 316 C409.546 314.895 417.28 313.823 425.031 312.852 C425.823 312.752 426.615 312.653 427.43 312.551 C429.064 312.346 430.698 312.141 432.331 311.936 C450.9 309.605 469.399 306.911 487.896 304.073 C493.675 303.191 499.461 302.358 505.25 301.539 C516.472 299.948 527.676 298.249 538.875 296.5 C539.934 296.335 540.993 296.17 542.085 295.999 C573.282 291.116 604.396 285.653 635.464 280.01 C636.26 279.867 637.056 279.723 637.877 279.575 C639.893 279.211 641.908 278.842 643.923 278.474 C647 278 647 278 651 278 C651.255 277.156 651.51 276.312 651.772 275.442 C653.092 271.743 654.779 268.37 656.641 264.926 C656.999 264.253 657.358 263.58 657.728 262.886 C658.898 260.693 660.074 258.503 661.25 256.312 C662.893 253.237 664.532 250.159 666.172 247.082 C666.583 246.312 666.993 245.542 667.417 244.748 C671.173 237.697 674.844 230.604 678.5 223.5 C682.724 215.299 687.019 207.156 691.631 199.166 C695.163 192.97 698.068 186.497 701 180 C675.3 168.174 675.3 168.174 649.434 156.716 C641.555 153.287 633.774 149.659 626 146 C624.699 145.388 623.397 144.776 622.096 144.164 C620.787 143.548 619.477 142.932 618.168 142.316 C617.512 142.008 616.857 141.7 616.181 141.382 C615.523 141.072 614.864 140.762 614.186 140.443 C613.195 139.978 613.195 139.978 612.185 139.503 C610.859 138.878 609.532 138.253 608.206 137.628 C598.32 132.966 588.37 128.468 578.372 124.051 C575.13 122.615 571.894 121.166 568.658 119.718 C545.578 109.385 522.422 99.25 499.162 89.331 C497.722 88.717 497.722 88.717 496.253 88.091 C494.353 87.281 492.453 86.472 490.552 85.663 C485.619 83.562 480.7 81.434 475.796 79.267 C474.26 78.59 474.26 78.59 472.693 77.9 C470.753 77.044 468.815 76.183 466.88 75.317 C448.854 67.372 431.609 67.848 412.234 67.867 C409.897 67.866 407.561 67.865 405.224 67.863 C399.014 67.86 392.805 67.864 386.595 67.871 C382.736 67.875 378.877 67.878 375.019 67.88 C340.206 67.902 305.407 67.981 270.606 68.905 C266.608 69.01 262.61 69.111 258.612 69.211 C219.065 70.209 179.53 71.463 140 73 C139.252 77.324 138.594 81.652 138 86 C137.874 86.853 137.748 87.705 137.619 88.584 C137.335 91.992 137.45 94.128 139.301 97.063 C141.12 99.197 143.033 101.129 145.062 103.062 C146.388 104.385 147.712 105.71 149.035 107.035 C150.025 108.011 150.025 108.011 151.035 109.006 C153.614 111.623 156.012 114.375 158.408 117.159 C161.28 120.481 164.292 123.679 167.277 126.898 C169 129 169 129 169 131 C167.879 131.464 166.757 131.928 165.602 132.406 C129.782 147.406 94.458 164.556 60.586 183.551 C57.885 185.065 55.175 186.564 52.465 188.062 C31.675 199.621 11.47 212.162 -8.376 225.268 C-10.242 226.5 -12.11 227.728 -13.979 228.955 C-29.965 239.408 -29.965 239.408 -45.242 250.852 C-48 253 -48 253 -51.008 254.961 C-56.047 258.253 -59.369 260.944 -61.965 266.453 C-62.721 268.049 -62.721 268.049 -63.493 269.677 C-65.931 275.052 -68.317 280.443 -70.625 285.875 C-71.14 287.084 -71.655 288.293 -72.186 289.539 C-90.589 332.894 -106.019 377.044 -120 422 C-123.409 419.233 -126.559 416.588 -129.383 413.211 C-133.079 408.882 -136.956 404.752 -140.875 400.625 C-145.938 395.27 -150.959 389.889 -155.863 384.387 C-158.385 381.569 -160.941 378.784 -163.5 376 C-167.627 371.507 -171.739 367.003 -175.785 362.438 C-177.335 360.732 -178.93 359.068 -180.559 357.438 C-181.385 356.592 -182.211 355.746 -183.062 354.875 C-183.817 354.13 -184.571 353.385 -185.348 352.617 C-189.334 346.302 -186.326 336.761 -185.164 329.809 C-184.969 328.616 -184.775 327.423 -184.574 326.193 C-184.043 322.95 -183.505 319.707 -182.963 316.465 C-182.623 314.425 -182.285 312.386 -181.947 310.346 C-176.05 274.731 -169.752 239.182 -162.647 203.787 C-162.262 201.868 -161.879 199.949 -161.5 198.029 C-160.98 195.411 -160.447 192.795 -159.91 190.18 C-159.761 189.418 -159.611 188.656 -159.457 187.871 C-158.047 181.155 -155.607 177.227 -150.5 172.75 C-149.611 171.969 -148.721 171.188 -147.805 170.383 C-144.202 167.322 -140.528 164.355 -136.852 161.383 C-133.811 158.842 -130.9 156.198 -128 153.5 C-123.367 149.19 -118.579 145.149 -113.648 141.18 C-111.027 139.022 -108.508 136.787 -106 134.5 C-102.625 131.423 -99.182 128.489 -95.625 125.625 C-91.072 121.944 -86.766 118.074 -82.483 114.089 C-78.372 110.286 -74.077 106.757 -69.715 103.246 C-66.893 100.912 -64.194 98.48 -61.5 96 C-57.107 91.961 -52.582 88.156 -47.941 84.406 C-44.626 81.694 -41.371 78.919 -38.125 76.125 C-37.539 75.621 -36.952 75.117 -36.348 74.598 C-35.159 73.576 -33.97 72.554 -32.782 71.532 C-12.304 53.927 -12.304 53.927 -9.117 54.105 C-6.146 55.361 -4.428 57.252 -2.188 59.562 C-1.301 60.475 -0.414 61.388 0.5 62.328 C3.066 65.07 5.519 67.883 7.957 70.738 C11.235 74.367 14.743 77.763 18.219 81.2 C21.854 84.809 25.33 88.495 28.633 92.414 C29.084 92.937 29.535 93.461 30 94 C30.708 94.878 30.708 94.878 31.43 95.773 C31.948 96.178 32.466 96.583 33 97 C37.218 96.286 40.797 94.158 44.539 92.184 C45.261 91.808 45.983 91.432 46.727 91.044 C49.029 89.846 51.327 88.642 53.625 87.438 C56.656 85.848 59.691 84.264 62.727 82.684 C63.426 82.315 64.124 81.946 64.845 81.566 C69.774 79 69.774 79 72 79 C72 78.34 72 77.68 72 77 C71.01 76.67 70.02 76.34 69 76 C67.422 74.416 67.422 74.416 65.75 72.406 C62.281 68.32 58.679 64.397 55 60.5 C53.681 59.098 52.362 57.695 51.043 56.293 C50.374 55.583 49.706 54.873 49.017 54.142 C45.778 50.703 42.545 47.258 39.312 43.812 C38.686 43.145 38.059 42.477 37.414 41.789 C33.133 37.222 28.881 32.63 24.646 28.021 C21.732 24.856 18.794 21.716 15.84 18.59 C15.121 17.829 14.402 17.069 13.662 16.285 C12.253 14.796 10.842 13.308 9.43 11.823 C0 1.857 0 1.857 0 0 Z " fill="#EDAF42" transform="translate(225,240)"/>
+<path d="M0 0 C1.732 5.195 -1.669 9.779 -3.875 14.562 C-4.63 16.203 -4.63 16.203 -5.399 17.877 C-9.059 25.575 -12.705 31.222 -19 37 C-20.162 38.319 -21.308 39.652 -22.438 41 C-25.957 45.051 -29.766 48.781 -33.582 52.551 C-36.306 55.31 -38.835 58.192 -41.355 61.137 C-43.004 63.005 -44.723 64.755 -46.5 66.5 C-49.527 69.479 -52.346 72.58 -55.083 75.827 C-57 78 -57 78 -58.913 79.8 C-65.788 86.538 -67.816 94.26 -70.25 103.25 C-70.71 104.878 -71.171 106.505 -71.635 108.132 C-72.87 112.504 -74.07 116.886 -75.259 121.271 C-76.001 124.005 -76.751 126.737 -77.502 129.469 C-92.244 183.144 -104.719 237.296 -115 292 C-115.66 292 -116.32 292 -117 292 C-118.34 290.637 -118.34 290.637 -119.938 288.688 C-123.769 284.168 -127.919 280.044 -132.156 275.906 C-134.258 273.811 -136.202 271.624 -138.129 269.367 C-141.11 265.923 -144.258 262.677 -147.496 259.477 C-147.979 259 -148.461 258.523 -148.958 258.031 C-150.963 256.054 -152.972 254.08 -154.985 252.111 C-156.472 250.654 -157.953 249.191 -159.434 247.727 C-160.311 246.866 -161.188 246.006 -162.092 245.12 C-164 243 -164 243 -164 241 C-164.66 241 -165.32 241 -166 241 C-168.188 239.5 -168.188 239.5 -170 237 C-169.569 229.591 -167.589 222.386 -165.875 215.188 C-165.709 214.487 -165.544 213.786 -165.373 213.065 C-156.714 176.536 -147.625 140.01 -137 104 C-136.612 102.68 -136.225 101.361 -135.837 100.041 C-133.919 93.523 -131.973 87.014 -129.977 80.52 C-128.617 76.095 -127.34 71.673 -126.251 67.175 C-122.467 54.795 -110.494 49.865 -99.812 43.812 C-98.12 42.847 -98.12 42.847 -96.393 41.862 C-92.936 39.895 -89.469 37.946 -86 36 C-84.971 35.42 -83.941 34.84 -82.88 34.242 C-67.613 25.676 -52.009 18.078 -36 11 C-35.254 10.664 -34.509 10.327 -33.74 9.98 C-22.866 5.097 -11.614 2.5 0 0 Z " fill="#EDAF42" transform="translate(333,488)"/>
+<path d="M0 0 C3.788 0.947 7.576 1.894 11.363 2.841 C12.39 3.098 12.39 3.098 13.438 3.359 C14.467 3.617 14.467 3.617 15.517 3.879 C16.213 4.053 16.91 4.227 17.627 4.407 C23.181 5.795 23.181 5.795 28.735 7.184 C29.856 7.464 29.856 7.464 31 7.75 C34.677 8.669 38.355 9.589 42.032 10.508 C42.748 10.687 43.464 10.866 44.201 11.05 C46.286 11.572 48.371 12.093 50.456 12.614 C52.407 13.102 54.358 13.589 56.309 14.077 C57.558 14.391 58.806 14.705 60.093 15.029 C62.877 15.726 65.666 16.399 68.458 17.062 C69.558 17.327 69.558 17.327 70.681 17.597 C72.095 17.937 73.51 18.272 74.927 18.6 C79.775 19.775 79.775 19.775 82 22 C71.373 33.603 57.632 45.298 41.492 47.473 C31.367 47.899 24.364 45.311 16.875 38.562 C8.466 29.541 1.754 16.612 0.457 4.325 C0.37 3.515 0.284 2.705 0.194 1.871 C0.13 1.253 0.066 0.636 0 0 Z " fill="#EDAF42" transform="translate(679,383)"/>
+    </g>
+  </defs>
+</svg>
+
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" style="width:26px;height:26px;">
+      <use href="#imbila-mark"/>
+    </svg>
+    <span>Imbila<em>.AI</em></span>
+  </div>
+  <div class="nav-links">
+    <a href="#origin">Origin</a>
+    <a href="#logo">Logo</a>
+    <a href="#tokens">Tokens</a>
+    <a href="#colour">Colour</a>
+    <a href="#type">Type</a>
+    <a href="#components">Components</a>
+    <a href="#voice">Voice</a>
+    <a href="#arch">Architecture</a>
+    <a href="#rules">Rules</a>
+    <a href="#agent">Agent Guide</a>
+  </div>
+  <span class="nav-tag">v3.0 · Mar 2026</span>
+</nav>
+
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-mark">
+    <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+      <use href="#imbila-mark"/>
+    </svg>
+  </div>
+  <h1>Brand Guide &<br><span class="accent">Design System</span></h1>
+  <p class="hero-sub">The single source of truth for every Imbila.AI property, build, and agent.</p>
+  <div class="hero-meta">
+    <span>DM Sans only</span>
+    <span>Honey Gold #EDAF42</span>
+    <span>Dark-first</span>
+  </div>
+</div>
+
+
+<div class="page">
+
+<!-- ═══════ 01 · BRAND ORIGIN ═══════ -->
+<section id="origin">
+  <div class="section-label">01 · Brand Origin</div>
+  <h2>The Honey Badger. <span class="accent">Fearless by nature.</span></h2>
+  <div class="grid-2" style="margin-top:32px;">
+    <div>
+      <p><span class="strong">The name "Imbila"</span> comes from isiZulu. Imbila.AI has adopted the <span class="strong accent">honey badger</span> as its brand animal — the most fearless creature on the planet. Pound for pound, it punches far above its weight. Tenacious, resourceful, relentless, and famously unbothered by larger predators.</p>
+      <p>This is the brand ethos: <span class="strong">help the underdogs compete. Don't back down. Move fast. Get results.</span></p>
+      <div class="divider"></div>
+      <p class="dim" style="font-size:14px;"><em>The Zulu proverb "Imbila yeswela umsila ngokuyalezela" — the creature that lost its tail by sending others — remains the philosophical core: don't delegate your own AI journey.</em></p>
+      <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:20px;">
+        <span class="tag">Fearless</span>
+        <span class="tag">Tenacious</span>
+        <span class="tag">Resourceful</span>
+        <span class="tag">Direct</span>
+        <span class="tag">Punches above its weight</span>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="text-align:center; padding:48px 32px; background:var(--black); border-color:var(--grey-700);">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" style="max-width:240px; width:100%; margin:0 auto; display:block;">
+          <use href="#imbila-mark"/>
+        </svg>
+        <div style="font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--grey-600); margin-top:20px;">The Imbila Mark — Honey Badger</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════ 02 · LOGO SYSTEM ═══════ -->
+<section id="logo">
+  <div class="section-label">02 · Logo System</div>
+  <h2>The mark of the <span class="accent">Honey Badger.</span></h2>
+  <p style="margin-bottom:32px;">A geometric, angular honey badger head in profile — honey gold and black. Forward momentum, intelligence, precision. VTracer-traced SVG with colours enforced: <code style="color:var(--honey);">#EDAF42</code> + <code style="color:var(--honey);">#0A0A0A</code>.</p>
+
+  <!-- Variants table -->
+  <h3>Variants</h3>
+  <table class="audit-table">
+    <thead><tr><th>Variant</th><th>Use</th><th>Min Size</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--white); font-weight:500;">Standalone Mark (SVG)</td><td>All digital — hero graphics, merch, pattern elements</td><td>32px</td></tr>
+      <tr><td style="color:var(--white); font-weight:500;">Circle + Wordmark</td><td>Primary logo. Headers, docs, presentations, social profiles.</td><td>48px</td></tr>
+      <tr><td style="color:var(--white); font-weight:500;">Circle (no text)</td><td>Favicon, small avatars, app icons, watermarks.</td><td>24px</td></tr>
+      <tr><td style="color:var(--white); font-weight:500;">Horizontal Lockup</td><td>Email sigs, letterheads, co-branding.</td><td>160px wide</td></tr>
+    </tbody>
+  </table>
+
+  <!-- On backgrounds -->
+  <h3 style="margin-top:40px;">On Backgrounds</h3>
+  <p style="margin-bottom:16px; font-size:14px;">Transparent SVG — the inner face is #0A0A0A, matching black backgrounds seamlessly. On light backgrounds the face remains visible and correct.</p>
+  <div class="grid-3">
+    <div>
+      <div class="logo-showcase" style="background:var(--black);">
+        <svg viewBox="0 0 1024 1024" style="width:140px"><use href="#imbila-mark"/></svg>
+      </div>
+      <div class="logo-caption">On Black (Primary)</div>
+    </div>
+    <div>
+      <div class="logo-showcase" style="background:var(--grey-900);">
+        <svg viewBox="0 0 1024 1024" style="width:140px"><use href="#imbila-mark"/></svg>
+      </div>
+      <div class="logo-caption">On Dark Grey</div>
+    </div>
+    <div>
+      <div class="logo-showcase" style="background:#fff;">
+        <svg viewBox="0 0 1024 1024" style="width:140px"><use href="#imbila-mark"/></svg>
+      </div>
+      <div class="logo-caption">On White</div>
+    </div>
+  </div>
+
+  <!-- Size tests -->
+  <h3 style="margin-top:40px;">Scaling</h3>
+  <div class="size-strip" style="margin-top:12px;">
+    <div><svg viewBox="0 0 1024 1024" style="width:16px"><use href="#imbila-mark"/></svg><div class="lb">16</div></div>
+    <div><svg viewBox="0 0 1024 1024" style="width:24px"><use href="#imbila-mark"/></svg><div class="lb">24</div></div>
+    <div><svg viewBox="0 0 1024 1024" style="width:32px"><use href="#imbila-mark"/></svg><div class="lb">32</div></div>
+    <div><svg viewBox="0 0 1024 1024" style="width:48px"><use href="#imbila-mark"/></svg><div class="lb">48</div></div>
+    <div><svg viewBox="0 0 1024 1024" style="width:64px"><use href="#imbila-mark"/></svg><div class="lb">64</div></div>
+    <div><svg viewBox="0 0 1024 1024" style="width:100px"><use href="#imbila-mark"/></svg><div class="lb">100</div></div>
+    <div><svg viewBox="0 0 1024 1024" style="width:160px"><use href="#imbila-mark"/></svg><div class="lb">160</div></div>
+  </div>
+
+  <!-- Circle badge -->
+  <h3 style="margin-top:40px;">Circle Badge</h3>
+  <div class="grid-2" style="margin-top:12px;">
+    <div>
+      <div class="logo-showcase" style="background:var(--black); min-height:280px;">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="max-width:200px">
+          <circle cx="150" cy="150" r="142" fill="none" stroke="#EDAF42" stroke-width="3.5"/>
+          <svg x="30" y="25" width="240" height="240" viewBox="0 0 1024 1024"><use href="#imbila-mark"/></svg>
+          <text x="150" y="270" text-anchor="middle" fill="#EDAF42" font-family="'DM Sans',sans-serif" font-size="24" font-weight="500" letter-spacing="0.8">imbila.ai</text>
+        </svg>
+      </div>
+      <div class="logo-caption">Circle + Wordmark</div>
+    </div>
+    <div>
+      <div class="logo-showcase" style="background:var(--black); min-height:280px;">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="max-width:200px">
+          <circle cx="150" cy="150" r="142" fill="none" stroke="#EDAF42" stroke-width="3.5"/>
+          <svg x="22" y="22" width="256" height="256" viewBox="0 0 1024 1024"><use href="#imbila-mark"/></svg>
+        </svg>
+      </div>
+      <div class="logo-caption">Circle (No Text) — Favicon / Avatar</div>
+    </div>
+  </div>
+
+  <!-- Horizontal lockup -->
+  <h3 style="margin-top:40px;">Horizontal Lockup</h3>
+  <div class="logo-showcase" style="background:var(--black); padding:40px 48px; margin-top:12px;">
+    <svg viewBox="0 0 600 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px">
+      <svg x="0" y="0" width="80" height="80" viewBox="0 0 1024 1024"><use href="#imbila-mark"/></svg>
+      <line x1="96" y1="14" x2="96" y2="66" stroke="#3D3D3D" stroke-width="1"/>
+      <text x="114" y="38" fill="#FFF" font-family="'DM Sans',sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5">Imbila<tspan fill="#EDAF42">.AI</tspan></text>
+      <text x="114" y="60" fill="#999" font-family="'DM Sans',sans-serif" font-size="12" font-weight="500" letter-spacing="1.5">AI STRATEGY &amp; IMPLEMENTATION</text>
+    </svg>
+  </div>
+  <div class="logo-caption">Dark variant</div>
+  <div class="logo-showcase" style="background:#fff; padding:40px 48px; margin-top:12px;">
+    <svg viewBox="0 0 600 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px">
+      <svg x="0" y="0" width="80" height="80" viewBox="0 0 1024 1024"><use href="#imbila-mark"/></svg>
+      <line x1="96" y1="14" x2="96" y2="66" stroke="#DDD" stroke-width="1"/>
+      <text x="114" y="38" fill="#0A0A0A" font-family="'DM Sans',sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5">Imbila<tspan fill="#EDAF42">.AI</tspan></text>
+      <text x="114" y="60" fill="#999" font-family="'DM Sans',sans-serif" font-size="12" font-weight="500" letter-spacing="1.5">AI STRATEGY &amp; IMPLEMENTATION</text>
+    </svg>
+  </div>
+  <div class="logo-caption">Light variant</div>
+</section>
+
+
+<!-- ═══════ 03 · DESIGN TOKENS ═══════ -->
+<section id="tokens">
+  <div class="section-label">03 · Design Tokens</div>
+  <h2>Copy-paste ready. <span class="accent">Every project starts here.</span></h2>
+  <p style="margin-bottom:28px;">Drop this <code style="color:var(--honey);">:root</code> block into any CSS file. This is the canonical reference — if a value isn't here, it doesn't exist in the system.</p>
+
+  <div class="token-block">
+    <button class="copy-btn" onclick="copyTokens()">Copy tokens</button>
+<pre id="token-source"><span class="tc">/* ═══ IMBILA.AI DESIGN TOKENS v3.0 ═══ */</span>
+<span class="tc">/* brand.imbila.ai — single source of truth */</span>
+
+<span class="tc">/* Font — DM Sans. No exceptions. */</span>
+<span class="tk">--font:</span>        <span class="tv">'DM Sans', system-ui, -apple-system, sans-serif;</span>
+
+<span class="tc">/* Honey Gold — brand accent */</span>
+<span class="tk">--honey:</span>       <span class="tv">#EDAF42;</span>
+<span class="tk">--honey-light:</span> <span class="tv">#F5C96E;</span>
+<span class="tk">--honey-dark:</span>  <span class="tv">#C8922F;</span>
+<span class="tk">--honey-deep:</span>  <span class="tv">#A67720;</span>
+<span class="tk">--honey-wash:</span>  <span class="tv">#FAE0A5;</span>
+<span class="tk">--honey-10:</span>    <span class="tv">rgba(237,175,66,0.10);</span>
+<span class="tk">--honey-15:</span>    <span class="tv">rgba(237,175,66,0.15);</span>
+
+<span class="tc">/* Blacks */</span>
+<span class="tk">--black:</span>       <span class="tv">#0A0A0A;</span>
+<span class="tk">--black-rich:</span>  <span class="tv">#111111;</span>
+<span class="tk">--black-soft:</span>  <span class="tv">#1A1A1A;</span>
+
+<span class="tc">/* Neutral Scale */</span>
+<span class="tk">--grey-900:</span>    <span class="tv">#1F1E1E;</span>
+<span class="tk">--grey-800:</span>    <span class="tv">#2A2A2A;</span>
+<span class="tk">--grey-700:</span>    <span class="tv">#3D3D3D;</span>
+<span class="tk">--grey-600:</span>    <span class="tv">#555555;</span>
+<span class="tk">--grey-500:</span>    <span class="tv">#777777;</span>
+<span class="tk">--grey-400:</span>    <span class="tv">#999999;</span>
+<span class="tk">--grey-300:</span>    <span class="tv">#BBBBBB;</span>
+<span class="tk">--grey-200:</span>    <span class="tv">#DDDDDD;</span>
+<span class="tk">--grey-100:</span>    <span class="tv">#EEEEEE;</span>
+<span class="tk">--grey-50:</span>     <span class="tv">#F5F5F5;</span>
+<span class="tk">--white:</span>       <span class="tv">#FAFAFA;</span>
+
+<span class="tc">/* Semantic */</span>
+<span class="tk">--success:</span>     <span class="tv">#3A9E6B;</span>
+<span class="tk">--warning:</span>     <span class="tv">#E8A838;</span>
+<span class="tk">--error:</span>       <span class="tv">#D94F4F;</span>
+<span class="tk">--info:</span>        <span class="tv">#4A90B8;</span>
+
+<span class="tc">/* Radii */</span>
+<span class="tk">--radius-sm:</span>   <span class="tv">6px;</span>
+<span class="tk">--radius-md:</span>   <span class="tv">10px;</span>
+<span class="tk">--radius-lg:</span>   <span class="tv">16px;</span>
+<span class="tk">--radius-pill:</span> <span class="tv">100px;</span></pre>
+  </div>
+</section>
+
+
+<!-- ═══════ 04 · COLOUR ═══════ -->
+<section id="colour">
+  <div class="section-label">04 · Colour</div>
+  <h2>Honey Gold on black. <span class="accent">That's the brand.</span></h2>
+  <p style="margin-bottom:32px;">The palette is deliberately restrained — authority from black, warmth from honey, clarity from the grey scale. Every property must use these exact values.</p>
+
+  <div class="swatch-group">
+    <div class="swatch-group-label">Honey Gold — Brand Accent</div>
+    <div class="swatch-strip">
+      <div class="swatch swatch-primary on-dark" style="background:#EDAF42;" onclick="copySwatch(this,'#EDAF42')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">Honey</div>
+        <div class="swatch-hex">#EDAF42</div>
+        <div class="swatch-var">--honey</div>
+      </div>
+      <div class="swatch on-dark" style="background:#F5C96E;" onclick="copySwatch(this,'#F5C96E')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">Light</div>
+        <div class="swatch-hex">#F5C96E</div>
+      </div>
+      <div class="swatch on-dark" style="background:#C8922F;" onclick="copySwatch(this,'#C8922F')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">Dark</div>
+        <div class="swatch-hex">#C8922F</div>
+      </div>
+      <div class="swatch on-dark" style="background:#A67720;" onclick="copySwatch(this,'#A67720')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">Deep</div>
+        <div class="swatch-hex">#A67720</div>
+      </div>
+      <div class="swatch on-dark" style="background:#FAE0A5;" onclick="copySwatch(this,'#FAE0A5')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">Wash</div>
+        <div class="swatch-hex">#FAE0A5</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="swatch-group">
+    <div class="swatch-group-label">Blacks & Neutrals</div>
+    <div class="swatch-strip">
+      <div class="swatch swatch-primary on-dark" style="background:#0A0A0A;" onclick="copySwatch(this,'#0A0A0A')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">Black</div>
+        <div class="swatch-hex">#0A0A0A</div>
+      </div>
+      <div class="swatch on-dark" style="background:#111111;" onclick="copySwatch(this,'#111111')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">Rich</div>
+        <div class="swatch-hex">#111111</div>
+      </div>
+      <div class="swatch on-dark" style="background:#1A1A1A;" onclick="copySwatch(this,'#1A1A1A')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">Soft</div>
+        <div class="swatch-hex">#1A1A1A</div>
+      </div>
+      <div class="swatch on-dark" style="background:#1F1E1E;" onclick="copySwatch(this,'#1F1E1E')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">900</div>
+        <div class="swatch-hex">#1F1E1E</div>
+      </div>
+      <div class="swatch on-dark" style="background:#2A2A2A;" onclick="copySwatch(this,'#2A2A2A')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">800</div>
+        <div class="swatch-hex">#2A2A2A</div>
+      </div>
+      <div class="swatch on-dark" style="background:#3D3D3D;" onclick="copySwatch(this,'#3D3D3D')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">700</div>
+        <div class="swatch-hex">#3D3D3D</div>
+      </div>
+      <div class="swatch on-dark" style="background:#555555;" onclick="copySwatch(this,'#555555')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">600</div>
+        <div class="swatch-hex">#555555</div>
+      </div>
+      <div class="swatch on-light" style="background:#999999;" onclick="copySwatch(this,'#999999')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">400</div>
+        <div class="swatch-hex">#999999</div>
+      </div>
+      <div class="swatch on-light" style="background:#BBBBBB;" onclick="copySwatch(this,'#BBBBBB')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">300</div>
+        <div class="swatch-hex">#BBBBBB</div>
+      </div>
+      <div class="swatch on-light" style="background:#FAFAFA;" onclick="copySwatch(this,'#FAFAFA')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">White</div>
+        <div class="swatch-hex">#FAFAFA</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="swatch-group">
+    <div class="swatch-group-label">Semantic</div>
+    <div class="swatch-strip">
+      <div class="swatch on-dark" style="background:#3A9E6B;" onclick="copySwatch(this,'#3A9E6B')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">Success</div>
+        <div class="swatch-hex">#3A9E6B</div>
+      </div>
+      <div class="swatch on-dark" style="background:#E8A838;" onclick="copySwatch(this,'#E8A838')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">Warning</div>
+        <div class="swatch-hex">#E8A838</div>
+      </div>
+      <div class="swatch on-dark" style="background:#D94F4F;" onclick="copySwatch(this,'#D94F4F')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">Error</div>
+        <div class="swatch-hex">#D94F4F</div>
+      </div>
+      <div class="swatch on-dark" style="background:#4A90B8;" onclick="copySwatch(this,'#4A90B8')">
+        <span class="copied">Copied</span>
+        <div class="swatch-name">Info</div>
+        <div class="swatch-hex">#4A90B8</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:32px;">Usage Ratio</h3>
+  <div class="ratio-bar">
+    <div style="flex:60; background:var(--black);"></div>
+    <div style="flex:20; background:var(--grey-900);"></div>
+    <div style="flex:12; background:var(--honey);"></div>
+    <div style="flex:8; background:var(--white);"></div>
+  </div>
+  <div class="ratio-labels">
+    <span style="flex:60;">Black 60%</span>
+    <span style="flex:20;">Dark 20%</span>
+    <span style="flex:12;">Honey 12%</span>
+    <span style="flex:8;">White 8%</span>
+  </div>
+  <p class="dim" style="font-size:14px; margin-top:12px;">Black dominates. Gold punctuates. Honey is never a background colour — it's for CTAs, headings, the logo, and critical highlights only.</p>
+</section>
+
+
+<!-- ═══════ 05 · TYPOGRAPHY ═══════ -->
+<section id="type">
+  <div class="section-label">05 · Typography</div>
+  <h2>DM Sans is the only font. <span class="accent">No exceptions.</span></h2>
+  <p style="margin-bottom:8px;">No Inter. No Roboto. No system fallbacks in final renders. If it's Imbila, it's DM Sans.</p>
+  <p style="margin-bottom:32px; font-size:13px; color:var(--grey-500);">Google Fonts import: <code style="color:var(--grey-400);">family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800</code></p>
+
+  <div class="type-specimen">
+    <div class="type-row">
+      <div class="type-label">Display / H1</div>
+      <div class="type-sample" style="font-size:clamp(32px,4vw,48px); font-weight:800; letter-spacing:-0.035em; line-height:1.05;">Brand Guide &amp; Design System</div>
+      <div class="type-meta">800 · -0.035em · 1.05</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Section / H2</div>
+      <div class="type-sample" style="font-size:32px; font-weight:700; letter-spacing:-0.025em; line-height:1.12;">Honey Gold on black. <span class="accent">That's the brand.</span></div>
+      <div class="type-meta">700 · -0.025em · 1.12</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Label / H3</div>
+      <div class="type-sample" style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--grey-500);">Section Label · Uppercase</div>
+      <div class="type-meta">700 · 0.14em · UPPER</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Subhead / H4</div>
+      <div class="type-sample" style="font-size:18px; font-weight:600;">Imbila Enterprise</div>
+      <div class="type-meta">600 · 18px</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Body</div>
+      <div class="type-sample" style="font-size:16px; font-weight:400; color:var(--grey-300); line-height:1.7;">We translate AI complexity into clarity, and clarity into execution. We help organisations and individuals move from uncertainty to structured implementation with measurable results.</div>
+      <div class="type-meta">400 · 16px · 1.7</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Small / Caption</div>
+      <div class="type-sample" style="font-size:13px; font-weight:500; color:var(--grey-400);">March 2026 · Craig Leppan, Founder</div>
+      <div class="type-meta">500 · 13px</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Tag / Pill</div>
+      <div class="type-sample"><span class="tag">Honey Gold</span> &nbsp; <span class="tag">DM Sans</span> &nbsp; <span class="tag">Dark-first</span></div>
+      <div class="type-meta">500 · 12px · pill</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════ 06 · COMPONENTS ═══════ -->
+<section id="components">
+  <div class="section-label">06 · Components</div>
+  <h2>Building blocks. <span class="accent">Ready to use.</span></h2>
+  <p style="margin-bottom:32px;">These components should look and behave identically across www.imbila.ai, claude.imbila.ai, and any future microsite or agent-built page.</p>
+
+  <h3 style="margin-top:24px;">Buttons</h3>
+  <div class="demo-area" style="margin-bottom:24px;">
+    <button class="btn btn-primary">Get Started</button>
+    <button class="btn btn-primary">Book a Call →</button>
+    <button class="btn btn-secondary">Learn More</button>
+    <button class="btn btn-ghost">View all →</button>
+  </div>
+
+  <h3>Tags & Pills</h3>
+  <div class="demo-area" style="margin-bottom:24px;">
+    <span class="tag">Enterprise</span>
+    <span class="tag">Studio</span>
+    <span class="tag">Dojo</span>
+    <span class="tag">Free Course</span>
+    <span class="tag">4D Framework</span>
+  </div>
+
+  <h3>Inputs</h3>
+  <div class="demo-area" style="margin-bottom:24px;">
+    <input class="input-demo" placeholder="Your email address" type="email">
+    <button class="btn btn-primary">Subscribe</button>
+  </div>
+
+  <h3>Cards</h3>
+  <div class="grid-3" style="margin-top:12px;">
+    <div class="card">
+      <h3>Enterprise</h3>
+      <h4>AI Readiness Assessment</h4>
+      <p style="font-size:14px;">Evaluate process maturity, data quality, and governance foundations across your organisation.</p>
+    </div>
+    <div class="card">
+      <h3>Studio</h3>
+      <h4>AI Clarity Audit</h4>
+      <p style="font-size:14px;">A 1–2 week focused engagement to map where AI fits in your business — and where it doesn't.</p>
+    </div>
+    <div class="card">
+      <h3>Dojo</h3>
+      <h4>AI Mastery Workshop</h4>
+      <p style="font-size:14px;">Diagnostic-driven, hands-on AI training at Workshop17. No technical experience required.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════ 07 · VOICE & TONE ═══════ -->
+<section id="voice">
+  <div class="section-label">07 · Voice & Tone</div>
+  <h2>Direct. Practical. <span class="accent">Anti-hype.</span></h2>
+  <p style="margin-bottom:32px;">Imbila speaks like a sharp, experienced colleague — someone who's been in the trenches, not an ivory tower. The voice adapts by channel, but the backbone is constant: no fluff, no weasel words, no hedging.</p>
+
+  <div class="grid-3">
+    <div class="voice-card voice-enterprise">
+      <div class="voice-label">Enterprise</div>
+      <blockquote>"We evaluate your process maturity, data quality, and governance foundations before recommending any AI adoption path."</blockquote>
+      <p style="font-size:12px; color:var(--grey-500); margin-top:12px;">Measured · Authoritative · Governance-aware</p>
+    </div>
+    <div class="voice-card voice-studio">
+      <div class="voice-label">Studio</div>
+      <blockquote>"Stop wondering how AI fits into your business. Start using it. We'll have you running in two weeks."</blockquote>
+      <p style="font-size:12px; color:var(--grey-500); margin-top:12px;">Energetic · Direct · Action-oriented</p>
+    </div>
+    <div class="voice-card voice-dojo">
+      <div class="voice-label">Dojo / Blog</div>
+      <blockquote>"I really had 'fun' this weekend. My birthday present to myself was a Mac Mini M4. For anyone following AI you will know why..."</blockquote>
+      <p style="font-size:12px; color:var(--grey-500); margin-top:12px;">Conversational · Opinionated · Insightful</p>
+    </div>
+  </div>
+
+  <div class="dd-grid">
+    <div class="dd-col">
+      <h4><span class="dd-do">✓</span> Use these phrases</h4>
+      <div class="dd-item">"Clarity into execution"</div>
+      <div class="dd-item">"Working solutions, not just advice"</div>
+      <div class="dd-item">"Weeks, not months"</div>
+      <div class="dd-item">"Capability, not dependency"</div>
+      <div class="dd-item">"No transformation theater"</div>
+      <div class="dd-item">"The smartest system is the one that keeps learning"</div>
+    </div>
+    <div class="dd-col">
+      <h4><span class="dd-dont">✗</span> Never use these</h4>
+      <div class="dd-item">"Digital transformation"</div>
+      <div class="dd-item">"Leverage synergies"</div>
+      <div class="dd-item">"AI revolution" / "AI disruption" (without context)</div>
+      <div class="dd-item">"Cutting-edge" / "state-of-the-art"</div>
+      <div class="dd-item">"We believe that potentially..."</div>
+      <div class="dd-item">"Paradigm shift" / "next-gen"</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════ 08 · ARCHITECTURE ═══════ -->
+<section id="arch">
+  <div class="section-label">08 · Brand Architecture</div>
+  <h2>Three tiers. <span class="accent">One brand.</span></h2>
+  <p style="margin-bottom:32px;">Every microsite, landing page, and agent-built asset maps to one of these tiers. The visual system is shared; the tone adapts.</p>
+
+  <div class="grid-3">
+    <div class="arch-card arch-e">
+      <h4>Imbila Enterprise</h4>
+      <div class="arch-aud">50+ employees · Regulated industries · Board-level</div>
+      <p>AI Readiness Assessment · Fractional AI Leadership · Implementation & Integration · MindFront.ai Alliance · SOC2 Assessment</p>
+    </div>
+    <div class="arch-card arch-s">
+      <h4>Imbila Studio</h4>
+      <div class="arch-aud">Consultants · Agencies &lt;20 · Small business · Freelancers</div>
+      <p>AI Clarity Audits · Co-Design Labs · AI Sprints & Roadmaps · AI-Augmented Service Delivery</p>
+    </div>
+    <div class="arch-card arch-d">
+      <h4>Imbila Dojo</h4>
+      <div class="arch-aud">Community · Newsletter · Workshop attendees · Self-learners</div>
+      <p>Blog · AI Mastery Workshops (Workshop17) · AI Assessment · YouTube · Podcast · Anthropic Academy guided courses</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:40px;">Subdomain Map</h3>
+  <table class="audit-table">
+    <thead><tr><th>Domain</th><th>Tier</th><th>Platform</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--white); font-weight:600;">www.imbila.ai</td><td>All tiers</td><td>Ghost</td><td>Main site — blog, services, membership, newsletter</td></tr>
+      <tr><td style="color:var(--white); font-weight:600;">claude.imbila.ai</td><td>Dojo</td><td>Static HTML</td><td>Anthropic Academy guided learning microsite</td></tr>
+      <tr><td style="color:var(--white); font-weight:600;">brand.imbila.ai</td><td>Internal</td><td>Static HTML</td><td>This brand guide — design system reference for humans and agents</td></tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ═══════ 09 · USAGE RULES ═══════ -->
+<section id="rules">
+  <div class="section-label">09 · Usage Rules</div>
+  <h2>Protect the mark. <span class="accent">Enforce the system.</span></h2>
+  <p style="margin-bottom:32px;">These restrictions apply to all properties, decks, documents, social posts, and agent-generated content.</p>
+
+  <div class="misuse-grid">
+    <div class="misuse-card">
+      <div class="misuse-vis" style="background:linear-gradient(135deg, #ff6b6b, #feca57);"><span style="color:white; font-weight:600; font-size:14px;">imbila.ai</span></div>
+      <div class="misuse-label">No gradients / rainbow</div>
+    </div>
+    <div class="misuse-card">
+      <div class="misuse-vis" style="background:var(--black);"><span style="font-size:16px; color:var(--honey); font-weight:700; transform:rotate(12deg); display:inline-block;">imbila</span></div>
+      <div class="misuse-label">No rotation or distortion</div>
+    </div>
+    <div class="misuse-card">
+      <div class="misuse-vis" style="background:var(--black);"><span style="font-size:14px; color:#ff6b6b; font-weight:700;">imbila.ai</span></div>
+      <div class="misuse-label">No colour changes</div>
+    </div>
+    <div class="misuse-card">
+      <div class="misuse-vis" style="background:var(--grey-400);"><span style="font-size:14px; color:var(--grey-500); font-weight:600;">imbila.ai</span></div>
+      <div class="misuse-label">No low-contrast backgrounds</div>
+    </div>
+    <div class="misuse-card">
+      <div class="misuse-vis" style="background:var(--black);"><span style="font-size:14px; color:var(--honey); font-weight:600; text-shadow:0 0 18px var(--honey);">imbila.ai</span></div>
+      <div class="misuse-label">No glows or drop shadows</div>
+    </div>
+    <div class="misuse-card">
+      <div class="misuse-vis" style="background:var(--black);"><span style="font-size:14px; color:var(--honey); letter-spacing:14px; font-weight:600;">IMBILA</span></div>
+      <div class="misuse-label">No altered spacing or all-caps</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════ 10 · AGENT INSTRUCTIONS ═══════ -->
+<section id="agent">
+  <div class="section-label">10 · Agent Build Guide</div>
+  <h2>For AI agents building <span class="accent">on-brand.</span></h2>
+  <p style="margin-bottom:32px;">Any AI agent (Claude or third-party) creating content, pages, emails, or assets for Imbila must follow these rules. This section is the machine-readable contract.</p>
+
+  <div class="grid-2">
+    <div class="agent-block">
+      <h4>Visual Rules</h4>
+      <ul>
+        <li>Always import DM Sans from Google Fonts. No other typefaces permitted.</li>
+        <li>Use the design tokens in Section 03 as your <code style="color:var(--honey);">:root</code> block — copy them verbatim.</li>
+        <li>Primary background is <code style="color:var(--honey);">#0A0A0A</code>. Cards use <code style="color:var(--honey);">#1F1E1E</code>. Borders use <code style="color:var(--honey);">#2A2A2A</code>.</li>
+        <li>Accent colour is always Honey Gold <code style="color:var(--honey);">#EDAF42</code> — for CTAs, links, highlights, and tags.</li>
+        <li>Never use gradients, glows, shadows on the logo, or colours outside this palette.</li>
+        <li>Border radius: 16px for cards, 10px for inputs, 100px for pills/tags/buttons.</li>
+        <li>Body text is <code style="color:var(--honey);">#BBBBBB</code> (grey-300). Headings are <code style="color:var(--honey);">#FAFAFA</code> (white).</li>
+        <li>Use the SVG honey badger mark from this guide. No raster fallbacks in new builds.</li>
+      </ul>
+    </div>
+    <div class="agent-block">
+      <h4>Voice Rules</h4>
+      <ul>
+        <li>Write as a sharp, experienced colleague — not a corporate brochure.</li>
+        <li>Be direct. No fluff, no hedging, no "leverage synergies."</li>
+        <li>Match tone to tier: measured for Enterprise, energetic for Studio, conversational for Dojo.</li>
+        <li>Use signature phrases: "Weeks, not months" · "Clarity into execution" · "No transformation theater"</li>
+        <li>Never say: "digital transformation," "cutting-edge," "paradigm shift," or "we believe that potentially..."</li>
+        <li>Keep the South African voice natural — not performative, not Silicon Valley.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="agent-block" style="margin-top:24px;">
+    <h4>Structural Rules for Microsites</h4>
+    <ul>
+      <li>Every page must include the sticky nav with: Imbila mark (SVG) + wordmark, navigation links, and version tag.</li>
+      <li>Use the <code style="color:var(--honey);">.page</code> wrapper at max-width 1120px with 40px padding.</li>
+      <li>Section labels use the pattern: <code style="color:var(--honey);">01 · Section Name</code> — 10px, 700 weight, 0.2em tracking, uppercase, honey-dark colour.</li>
+      <li>H2 headings pair plain text with a <code style="color:var(--honey);">.accent</code> span in honey gold.</li>
+      <li>Cards: grey-900 background, grey-800 border, 16px radius, 28px padding. Hover lifts 2px and lightens border.</li>
+      <li>All CTAs link back to imbila.ai properties. External links get the ↗ suffix.</li>
+      <li>Footer: centred, minimal — logo, document title, date, confidentiality note.</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ═══════ 11 · QUICK REFERENCE ═══════ -->
+<section>
+  <div class="section-label">11 · Quick Reference</div>
+  <h2>The cheat sheet. <span class="accent">Pin this.</span></h2>
+
+  <div class="grid-3" style="margin-top:24px;">
+    <div class="card" style="border-left:3px solid var(--honey);">
+      <h3>Font</h3>
+      <h4>DM Sans</h4>
+      <p style="font-size:13px;">800 for display · 700 for headings · 600 for subheads · 400 for body · 300 for light text</p>
+    </div>
+    <div class="card" style="border-left:3px solid var(--honey);">
+      <h3>Primary Accent</h3>
+      <h4 style="color:var(--honey);">#EDAF42</h4>
+      <p style="font-size:13px;">CTAs · Links · Tags · Highlights · Section accents. Never as a background fill for large areas.</p>
+    </div>
+    <div class="card" style="border-left:3px solid var(--honey);">
+      <h3>Background</h3>
+      <h4>#0A0A0A</h4>
+      <p style="font-size:13px;">Page background. Cards on #1F1E1E. Borders on #2A2A2A. Dark-first, always.</p>
+    </div>
+    <div class="card" style="border-left:3px solid var(--honey);">
+      <h3>Body Text</h3>
+      <h4 style="color:var(--grey-300);">#BBBBBB</h4>
+      <p style="font-size:13px;">All body copy. Max-width 64ch for readability. Line-height 1.7.</p>
+    </div>
+    <div class="card" style="border-left:3px solid var(--honey);">
+      <h3>Tagline</h3>
+      <h4 style="font-size:15px;">"AI Strategy & Implementation That Actually Delivers ROI"</h4>
+      <p style="font-size:13px;">Primary tagline. Supporting: "Clarity, not chaos. Speed, not risk."</p>
+    </div>
+    <div class="card" style="border-left:3px solid var(--honey);">
+      <h3>Brand Animal</h3>
+      <h4>Honey Badger</h4>
+      <p style="font-size:13px;">Not the hyrax/dassie. The brand shifted to honey badger. All references updated.</p>
+    </div>
+  </div>
+</section>
+
+
+</div><!-- .page -->
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="page">
+    <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" style="width:36px; height:36px; margin:0 auto 16px;">
+      <use href="#imbila-mark"/>
+    </svg>
+    <p style="color:var(--white); font-weight:600; font-size:15px; text-align:center;">Imbila.AI Brand Guide & Design System v3.0</p>
+    <p style="color:var(--grey-500); font-size:13px; margin-top:6px; text-align:center;">March 2026 · Craig Leppan, Founder · Confidential</p>
+    <p style="color:var(--grey-700); font-size:11px; margin-top:12px; text-align:center;">This document is the single source of truth for all brand decisions across all properties and agent builds.</p>
+  </div>
+</footer>
+
+
+<script>
+// Copy swatch hex on click
+function copySwatch(el, hex) {
+  navigator.clipboard.writeText(hex).catch(() => {});
+  el.classList.add('flash');
+  setTimeout(() => el.classList.remove('flash'), 900);
+}
+
+// Copy full token block
+function copyTokens() {
+  const src = document.getElementById('token-source');
+  const text = src.innerText;
+  navigator.clipboard.writeText(text).catch(() => {});
+  const btn = document.querySelector('.copy-btn');
+  btn.textContent = 'Copied!';
+  setTimeout(() => btn.textContent = 'Copy tokens', 1500);
+}
+</script>
+
+</body>
+</html>
